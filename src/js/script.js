@@ -31,3 +31,25 @@ document.querySelectorAll('.nav-item, .nav-items').forEach(anchor => {
         head.classList.remove('no-rectangle'); // Возвращаем прямоугольник после закрытия меню
     });
 });
+
+let currentPosition = 0;
+const imageWidth = 320; // Ширина изображения + отступ (300px + 20px)
+
+function scrollLeft() {
+    const gallery = document.querySelector('.gallery');
+    currentPosition = Math.max(currentPosition - imageWidth * 3, 0); // Ограничение влево
+    gallery.style.transform = `translateX(-${currentPosition}px)`;
+}
+
+function scrollRight() {
+    const gallery = document.querySelector('.gallery');
+    const maxScroll = imageWidth * (gallery.children.length - 3); // Ограничение вправо
+    currentPosition = Math.min(currentPosition + imageWidth * 3, maxScroll);
+    gallery.style.transform = `translateX(-${currentPosition}px)`;
+}
+
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+
+leftBtn.addEventListener('click', scrollLeft);
+rightBtn.addEventListener('click', scrollRight);

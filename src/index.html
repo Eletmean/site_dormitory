@@ -37,24 +37,47 @@
     <script src="js/script.js"></script>
 
 
-    
     <div class="korpus" id="korpus">
-        <img src="images/image1.jpg" width="800" height="500" class="bottom-img">
+        <div class="controls">
+            <button class="scroll-btn left" id="leftbtn" onclick="scrollLeft()">&#10094;</button> <!-- Левая стрелка -->
+            
+            <div class="container">
+                <div class="gallery">
+                    <span><img src="images/kar1.jpg" alt="Image 1"></span>
+                    <span><img src="images/kar2.jpg" alt="Image 2"></span>
+                    <span><img src="images/kar3.jpg" alt="Image 3"></span>
+                    <span><img src="images/kar4.jpg" alt="Image 4"></span>
+                    <span><img src="images/kar5.jpg" alt="Image 5"></span>
+                </div>
+            </div>
+            
+            <button class="scroll-btn right" id="rightbtn" onclick="scrollRight()">&#10095;</button> <!-- Правая стрелка -->
+        </div>
     </div>
+    
 
 
     <div class="rooms" id="rooms">
         <div class="room-img2">
-            <img src="images/image2.jpg" width="400" height="239" class="bottom-img2">
+            <div class="overlay"></div>
+            <a href="rooms.html#suit"> <!-- Ссылка на следующую страницу -->
+                <img src="images/image2.jpg" width="400" height="239" class="bottom-img2">
+            </a>
             <h2>Сюит</h2>
         </div>
         <div class="room-img2">
-            <img src="images/image3.jpg" width="400" height="239" class="bottom-img3">
+            <div class="overlay"></div>
+            <a href="rooms.html#luxury"> <!-- Ссылка на следующую страницу -->
+                <img src="images/image3.jpg" width="400" height="239" class="bottom-img3">
+            </a>
             <h2>Люкс</h2>
         </div>
 
         <div class="room-img2">
-            <img src="images/image4.jpg" width="400" height="239" class="bottom-img4">
+            <div class="overlay"></div>
+            <a href="rooms.html#standart"> <!-- Ссылка на следующую страницу -->
+                <img src="images/image4.jpg" width="400" height="239" class="bottom-img3">
+            </a>
             <h2>Первая категория <br>(Стандарт)</h2>
         </div>
     </div>
@@ -63,10 +86,67 @@
 
     <div class="cost" id="cost">
         <h1>Цены и тарифы</h1>
+        <h2>Первая категория(Стандарт)</h2>
+        <h3 class="tariff">Cтуденческий тариф | за 1 койко место |  13000 рублей/мес.<br>Стандартный тариф | за 1 койко место | 4000 рублей/день.</h3>
+        <div class="horizontal-line"></div>
+        <h4>Люкс</h4>
+        <h5>*Недоступно для студентов</h5>
+        <h8>Стандартный тариф | за 1 койко место | x рублей/день.</h8>
+        <div class="horizontal-line2"></div>
+        <h6>Cьюит</h6>
+        <h7>*Недоступно для студентов</h7>
+        <h9>Стандартный тариф | за 1 койко место | x рублей/день.</h9>
     </div>
 
     <div class="reservation" id="reservation">
         <h1>Бронирование</h1>
+
+        <div class="reservation" id="reservation">
+        
+            <form action="/submit-booking" method="POST">
+                <!-- Поле ФИО -->
+                <label for="fullName">ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Введите ФИО">
+        
+                <!-- Поле почты -->
+                <label for="email">Почта:</label>
+                <input type="email" id="email" name="email" required placeholder="Введите email">
+        
+                <!-- Поле адреса проживания -->
+                <label for="address">Адрес проживания:</label>
+                <input type="text" id="address" name="address" required placeholder="Введите адрес проживания">
+        
+                <!-- Поле для номера учебной группы -->
+                <label for="studyGroup">Номер учебной группы:</label>
+                <input type="text" id="studyGroup" name="studyGroup" pattern="^[A-Z]{1}\d{4}-\d{2}-\d{2}-\d{2}$" required placeholder="Б9123-09-03-03">
+        
+                <!-- Поле для номера и серии паспорта -->
+                <label for="passport">Номер и серия паспорта:</label>
+                <input type="text" id="passport" name="passport" pattern="^\d{4} \d{6}$" required placeholder="1234 567890">
+        
+                <!-- Поле для типа комнаты -->
+                <label for="roomType">Тип комнаты:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="single">Стандарт</option>
+                    <option value="double">Люкс</option>
+                    <option value="suite">Сюит</option>
+                </select>
+        
+                <!-- Поле для приоритетного корпуса -->
+                <label for="building">Приоритетный корпус:</label>
+                <select id="building" name="building" required>
+                    <option value="1">Корпус 1</option>
+                    <option value="2">Корпус 2</option>
+                    <option value="3">Корпус 3</option>
+                    <option value="4">Корпус 4</option>
+                    <option value="5">Корпус 5</option>
+                </select>
+        
+                <!-- Кнопка отправки -->
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        
     </div>
 
 

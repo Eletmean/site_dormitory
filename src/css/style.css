@@ -173,12 +173,55 @@ body {
     text-align: center;
 }
 
-.bottom-image {
-    display: block; /* Отображаем как блочный элемент */
-    margin: 20px auto; /* Центрируем с отступами сверху и снизу */
-    max-width: 100%; /* Ограничиваем ширину до 100% родительского контейнера */
-    height: auto; /* Поддерживаем пропорции изображения */
+
+.korpus .container {
+    width: 960px; /* Ограничиваем ширину контейнера, чтобы вмещать только 3 изображения */
+    overflow-x: hidden; /* Скрываем полосу прокрутки */
 }
+
+.container .gallery {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    transition: transform 0.5s ease; /* Плавный переход при прокрутке */
+}
+
+.container .gallery img {
+    width: 300px; /* Устанавливаем фиксированную ширину изображения */
+    height: auto;
+    border-radius: 8px;
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* Скрываем полосу прокрутки */
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.scroll-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
 
 .cost {
     position: relative;
@@ -195,7 +238,7 @@ body {
 
 .cost h1 {
     position: absolute;
-    top: 80px; /* Отступ сверху */
+    top: 50px; /* Отступ сверху */
     left: 20px; /* Отступ слева */
     z-index: 2; 
     text-align: left; 
@@ -203,6 +246,94 @@ body {
     color: white;
     padding: 10px 20px;
 }
+
+.cost h2 {
+    position: absolute;
+    top: 140px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:30px;
+    color:white;
+    padding: 10px 20px;
+}
+
+.cost h3 {
+    position: absolute;
+    top: 250px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:24px;
+    color:white;
+    padding: 10px 20px;
+}
+.tariff {
+    line-height: 1.5; /* Измените значение для увеличения расстояния между строчками */
+}
+.cost h4 {
+    position: absolute;
+    top: 350px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:24px;
+    color:white;
+    padding: 10px 20px;
+}
+
+.cost h5 {
+    position: absolute;
+    top: 390px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:11px;
+    color:white;
+    padding: 10px 20px;
+}
+.cost h9 {
+    position: absolute;
+    top: 450px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:24px;
+    color:white;
+    padding: 10px 20px;
+}
+.cost h8 {
+    position: absolute;
+    top: 670px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:24px;
+    color:white;
+    padding: 10px 20px;
+}
+.cost h6 {
+    position: absolute;
+    top: 550px;
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:24px;
+    color:white;
+    padding: 10px 20px;
+}
+.cost h7 {
+    position: absolute;
+    top: 630px; 
+    left: 20px;
+    z-index: 2; 
+    text-align: left;
+    font-size:11px;
+    color:white;
+    padding: 10px 20px;
+} 
+
+
 
 .rooms {
     position: relative;
@@ -241,10 +372,28 @@ body {
     margin: 0;
 }
 
+.room-img2 a {
+    display: block; /* Сделаем ссылку блочной, чтобы весь элемент был кликабельным */
+}
 
+.room-img2 img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
 
+.room-img2 a:hover img {
+    opacity: 0.8; /* Уменьшаем яркость изображения при наведении */
+}
 
-
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Половина высоты изображения */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    pointer-events: none; /* Чтобы наложение не блокировало клики */
+    z-index: 0;
+}
 
 
 
@@ -285,14 +434,51 @@ body {
 
 .reservation h1{
     position: absolute;
-    top: 80px; /* Отступ сверху */
-    left: 20px; /* Отступ слева */
+    top: 50px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */ /* Отступ слева */
     z-index: 2; 
     text-align: left; 
     font-size: 40px;
     color: white;
     padding: 10px 20px;
 }
+
+#reservation form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+#reservation label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#reservation input,
+#reservation select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#reservation button {
+    background-color: #1C1C1C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#reservation button:hover {
+    background-color: #383737;
+}
+
 
 .LK {
     position: relative;
