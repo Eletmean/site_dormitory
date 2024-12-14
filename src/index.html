@@ -2,9 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel = 'stylesheet' href="css/style.css">
+    <link rel = 'stylesheet' href="/static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Общаги</title>
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
 </head>
  <body>
     <header class="head" id="head">
@@ -22,7 +25,7 @@
                 <li><a href="#rooms" class="nav-item">Номера</a></li>
                 <li><a href="#cost" class="nav-item">Стоимость</a></li>
                 <li><a href="#reservation" class="nav-item">Бронирование</a></li>
-                <li><a href="#LK" class="nav-item">Личный кабинет</a></li>
+                <li><a href="#LK" class="nav-item">Контакты</a></li>
             </ul>
         </nav>
         <div class="head-content" id="header">  
@@ -34,49 +37,81 @@
             </nav>
         </div>
     </header>
-    <script src="js/script.js"></script>
+    <script src="/static/js/script.js"></script>
 
 
-    <div class="korpus" id="korpus">
-        <div class="controls">
-            <button class="scroll-btn left" id="leftbtn" onclick="scrollLeft()">&#10094;</button> <!-- Левая стрелка -->
-            
-            <div class="container">
-                <div class="gallery">
-                    <span><img src="images/kar1.jpg" alt="Image 1"></span>
-                    <span><img src="images/kar2.jpg" alt="Image 2"></span>
-                    <span><img src="images/kar3.jpg" alt="Image 3"></span>
-                    <span><img src="images/kar4.jpg" alt="Image 4"></span>
-                    <span><img src="images/kar5.jpg" alt="Image 5"></span>
-                </div>
-            </div>
-            
-            <button class="scroll-btn right" id="rightbtn" onclick="scrollRight()">&#10095;</button> <!-- Правая стрелка -->
+
+    <!-- Корпуса -->
+    <div class ="korpus" id ="korpus">
+        <div class="text">
+            <h1>Гостиница №1 "Парис"</h1>
+        </div>
+        <div class ="photos">
+            <a href="/static/korpuss.html#korpus1">
+            <img src="/static/images/kar1.jpg" alt="kor1">
+            </a>
+        </div>
+
+        <div class="text2">
+            <h1>Гостиница №2 "Патрокл"</h1>
+        </div>
+        <div class ="photos2">
+            <a href="/static/korpuss.html#korpus2">
+            <img src="/static/images/kar2.jpg" alt="kor2">
+            </a>
+        </div>
+
+        <div class="text3">
+            <h1>Гостиница №3 "Улисс"</h1>
+        </div>
+        <div class ="photos3">
+            <a href="/static/korpuss.html#korpus3">
+            <img src="/static/images/kar3.jpg" alt="kor3">
+            </a>
+        </div>
+
+        <div class="text4">
+            <h1>Гостиница №4 "Ясон"</h1>
+        </div>
+        <div class ="photos4">
+            <a href="/static/korpuss.html#korpus4">
+            <img src="/static/images/kar4.jpg" alt="kor4">
+            </a>
+        </div>
+
+        <div class="text5">
+            <h1>Гостиница №5 "Орфей"</h1>
+        </div>
+        <div class ="photos5">
+            <a href="/static/korpuss.html#korpus5">
+            <img src="/static/images/kar5.jpg" alt="kor5">
+            </a>
         </div>
     </div>
-    
+
 
 
     <div class="rooms" id="rooms">
         <div class="room-img2">
             <div class="overlay"></div>
-            <a href="rooms.html#suit"> <!-- Ссылка на следующую страницу -->
-                <img src="images/image2.jpg" width="400" height="239" class="bottom-img2">
+            <a href="/static/rooms.html#suit"> <!-- Ссылка на следующую страницу -->
+                <img src="/static/images/image2.jpg" width="400" height="239" class="bottom-img2">
             </a>
             <h2>Сюит</h2>
         </div>
+
         <div class="room-img2">
             <div class="overlay"></div>
-            <a href="rooms.html#luxury"> <!-- Ссылка на следующую страницу -->
-                <img src="images/image3.jpg" width="400" height="239" class="bottom-img3">
+            <a href="/static/rooms.html#luxury"> <!-- Ссылка на следующую страницу -->
+                <img src="/static/images/image3.jpg" width="400" height="239" class="bottom-img3">
             </a>
             <h2>Люкс</h2>
         </div>
 
         <div class="room-img2">
             <div class="overlay"></div>
-            <a href="rooms.html#standart"> <!-- Ссылка на следующую страницу -->
-                <img src="images/image4.jpg" width="400" height="239" class="bottom-img3">
+            <a href="/static/rooms.html#standart"> <!-- Ссылка на следующую страницу -->
+                <img src="/static/images/image4.jpg" width="400" height="239" class="bottom-img3">
             </a>
             <h2>Первая категория <br>(Стандарт)</h2>
         </div>
@@ -86,23 +121,28 @@
 
     <div class="cost" id="cost">
         <h1>Цены и тарифы</h1>
+        <hr class="full-width-line">
+        
         <h2>Первая категория(Стандарт)</h2>
+        <div class="horizontal-line"></div>
         <h3 class="tariff">Cтуденческий тариф | за 1 койко место |  13000 рублей/мес.<br>Стандартный тариф | за 1 койко место | 4000 рублей/день.</h3>
         <div class="horizontal-line"></div>
         <h4>Люкс</h4>
         <h5>*Недоступно для студентов</h5>
-        <h8>Стандартный тариф | за 1 койко место | x рублей/день.</h8>
+        <h8>Стандартный тариф | за 1 койко место | 10000 рублей/день.</h8>
         <div class="horizontal-line2"></div>
         <h6>Cьюит</h6>
         <h7>*Недоступно для студентов</h7>
-        <h9>Стандартный тариф | за 1 койко место | x рублей/день.</h9>
+        <h9>Стандартный тариф | за 1 койко место | 30000 рублей/день.</h9>
     </div>
 
-    <div class="reservation" id="reservation">
-        <h1>Бронирование</h1>
 
-        <div class="reservation" id="reservation">
-        
+
+    <div class="reservation" id="reservation">    
+        <div class ="photo">
+            <img src="/static/images/iconic.png" alt="iconic">
+        </div>   
+
             <form action="/submit-booking" method="POST">
                 <!-- Поле ФИО -->
                 <label for="fullName">ФИО:</label>
@@ -118,7 +158,7 @@
         
                 <!-- Поле для номера учебной группы -->
                 <label for="studyGroup">Номер учебной группы:</label>
-                <input type="text" id="studyGroup" name="studyGroup" pattern="^[A-Z]{1}\d{4}-\d{2}-\d{2}-\d{2}$" required placeholder="Б9123-09-03-03">
+                <input type="text" id="studyGroup" name="studyGroup" required placeholder="Б9123-09-03-03">
         
                 <!-- Поле для номера и серии паспорта -->
                 <label for="passport">Номер и серия паспорта:</label>
@@ -145,14 +185,26 @@
                 <!-- Кнопка отправки -->
                 <button type="submit">Отправить</button>
             </form>
+    </div>
+
+
+    <footer class="footer" id="LK">
+        <div class="footer-content">
+            <h1>Контакты</h1>
+            <div class="contact-info">
+                <div class="left-info">
+                    <p><i class="fas fa-phone-alt"></i> Телефон: <a href="tel:+74232234010">+7 (423) 223-40-10</a></p>
+                    <p><i class="fas fa-phone-alt"></i> Телефон: <a href="tel:+74232652424">+7 (423) 265-24-24 (доб. 2830)</a></p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hotel@dvfu.ru">hotel@dvfu.ru</a></p>
+                </div>
+                <div class="right-info">
+                    <h2><i class="fas fa-map-marker-alt"></i> Адрес</h2>
+                    <p>посёлок Русский, посёлок Аякс, 10, корп. В (комната 5)</p>
+                </div>
+            </div>
+            <p>&copy; 2024 Все права защищены</p>
         </div>
-        
-    </div>
-
-
-    <div class="LK" id="LK">
-        <h1>Личный кабинет</h1>
-
-    </div>
+    </footer>
+    
  </body>
 </html>

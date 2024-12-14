@@ -1,0 +1,33 @@
+{
+    "email": "elina.abbasova.11@gmail.com",
+    "password": "tea752lol",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "127.0.0.1",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "user_database",
+            "database": "user_database",
+            "username": "root"
+        },
+    
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "127.0.0.1",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "user_bd",
+            "database": "user_database",
+            "username": "root"
+        }
+    ]
+}

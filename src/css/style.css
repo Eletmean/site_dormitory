@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif; /* Применение шрифта */
+    background-color: #1C1C1C;
 }
 
 /* Стиль шапки */
@@ -94,7 +95,6 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 .head-content {
     position: absolute; 
     top: 120px; /* Отступ сверху */
@@ -120,20 +120,20 @@ body {
 
 .nav-items {
     color: white;
+    background-color:  #6995d0;
     padding: 12px 24px;        
     text-decoration: none;  
     font-weight: bold;
     font-size: 28px;
-    border-radius: 30px;  
+    border-radius: 5px;  
     transition: background-color 0.3s, transform 0.2s;
     display: inline-block;
 }
 
 .nav-items:hover {
-    background-color: #383737; /* Цвет при наведении */
+    background-color: #3d63ab; /* Цвет при наведении */
     transform: scale(1.05);    /* Легкое увеличение при наведении */
 }
-
 
 
 .head::before {
@@ -160,66 +160,171 @@ body {
     display: none; /* Скрывает прямоугольник */
 }
 
-.korpus{
+
+/* КОРПУСЫ */
+.korpus {
     position: relative;
-    height: 100vh;
-    background-color: #1C1C1C;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Фиксирует фон */
+    height: 100vh; 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
-
-
-.korpus .container {
-    width: 960px; /* Ограничиваем ширину контейнера, чтобы вмещать только 3 изображения */
-    overflow-x: hidden; /* Скрываем полосу прокрутки */
+.photos {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 250px;
+    width: 400px;
 }
-
-.container .gallery {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    transition: transform 0.5s ease; /* Плавный переход при прокрутке */
+.photos img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
 }
-
-.container .gallery img {
-    width: 300px; /* Устанавливаем фиксированную ширину изображения */
-    height: auto;
-    border-radius: 8px;
-}
-
-.container::-webkit-scrollbar {
-    display: none; /* Скрываем полосу прокрутки */
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 0 auto;
-}
-
-.scroll-btn {
-    font-size: 24px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
+.text {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: 330px; /* Отступ сверху */
+    left: 100px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 12px;
     color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+    padding: 10px 20px;
+} 
+.photos img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.photos a:hover img {
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
 }
 
-.scroll-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+
+.photos2 {
+    position: absolute;  
+    top: 100px;
+    left: 510px;
+    height: 250px;
+    width: 400px;
+}
+.photos2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+.text2 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: 330px; /* Отступ сверху */
+    left: 550px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 12px;
+    color: white;
+    padding: 10px 20px;
+}
+.photos2 img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.photos2 a:hover img {
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
 }
 
 
+.photos3 {
+    position: absolute;  
+    top: 100px;
+    left: 970px;
+    height: 250px;
+    width: 400px;
+}
+.photos3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+.text3 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: 330px; /* Отступ сверху */
+    left: 1020px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 12px;
+    color: white;
+    padding: 10px 20px;
+}
+.photos3 img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.photos3 a:hover img {
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
+}
+
+
+.photos4 {
+    position: absolute;  
+    top: 470px;
+    left: 290px;
+    height: 250px;
+    width: 400px;
+}
+.photos4 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+.text4 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: 700px; /* Отступ сверху */
+    left: 350px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 12px;
+    color: white;
+    padding: 10px 20px;
+}
+.photos4 img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.photos4 a:hover img {
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
+}
+
+
+.photos5 {
+    position: absolute;  
+    top: 470px;
+    left: 760px;
+    height: 250px;
+    width: 400px;
+}
+.photos5 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+.text5 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: 700px; /* Отступ сверху */
+    left: 810px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 12px;
+    color: white;
+    padding: 10px 20px;
+}
+.photos5 img {
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+.photos5 a:hover img {
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
+}
 
 
 
@@ -238,8 +343,8 @@ body {
 
 .cost h1 {
     position: absolute;
-    top: 50px; /* Отступ сверху */
-    left: 20px; /* Отступ слева */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
     z-index: 2; 
     text-align: left; 
     font-size: 40px;
@@ -334,34 +439,30 @@ body {
 } 
 
 
-
+/*КОМНАТЫ */
 .rooms {
     position: relative;
     height: 100vh;
-    background-color: #1C1C1C;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Фиксирует фон */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center; 
 }
-
 /* Контейнер для каждого блока с картинкой и текстом */
 .room-img2 {
     position: relative;  
     width: 400px;
     height: 239px;
-    overflow: hidden;          /* Обрезает содержимое за пределами контейнера */
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 25px;
 }
-
 .room-img2 img {
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* Обеспечивает покрытие всего контейнера */ 
+    object-fit: cover;  
+    border-radius: 25px;       
 }
-
 .room-img2 h2 {
     position: absolute;
     bottom: 30px;      
@@ -371,19 +472,15 @@ body {
     font-size: 20px;
     margin: 0;
 }
-
 .room-img2 a {
     display: block; /* Сделаем ссылку блочной, чтобы весь элемент был кликабельным */
 }
-
 .room-img2 img {
     transition: opacity 0.3s ease; /* Плавный переход */
 }
-
 .room-img2 a:hover img {
-    opacity: 0.8; /* Уменьшаем яркость изображения при наведении */
+    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
 }
-
 .overlay {
     position: absolute;
     bottom: 0;
@@ -394,8 +491,6 @@ body {
     pointer-events: none; /* Чтобы наложение не блокировало клики */
     z-index: 0;
 }
-
-
 
 .bottom-img2{
     display: block; /* Отображаем как блочный элемент */
@@ -418,89 +513,161 @@ body {
     height: auto;
 }
 
-.reservation {
-    position: relative;
-    height: 100vh;
-    background-color: #1C1C1C;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Фиксирует фон */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
 
+/* БРОНИРОВАНИЕ */
+
+.photo {
+    position: absolute;  
+    height: 100%;
+    width: 60%; /* Изменяем ширину на 50% */
+    right: 0;   /* Сдвигаем блок вправо */
 }
 
-.reservation h1{
-    position: absolute;
-    top: 50px; /* Отступ сверху */
-    left: 20px; /* Отступ слева */ /* Отступ слева */
-    z-index: 2; 
-    text-align: left; 
-    font-size: 40px;
-    color: white;
-    padding: 10px 20px;
+.photo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+}
+
+.reservation {
+    left: 0;
+    width: 40%; /* Занимает 40% ширины экрана */
+    height: 100vh; /* Занимает всю высоту экрана */
+    background-color: #b1b1b1; /* Цвет фона формы */
+    padding: 20px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+#reservation {
+    padding: 30px; /* Отступ внутри контейнера формы */
 }
 
 #reservation form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
+    width: 100%;/* Занимает всю ширину контейнера формы */
+    background-color: #b1b1b1; /* Цвет фона формы */
+    padding: 30px; /* Отступы внутри формы */
+    box-sizing: border-box; /* Учитываем границы и отступы в ширине */
 }
 
 #reservation label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    display: block; /* Метки располагаются на новой строке */
+    margin-bottom: 10px; /* Отступ снизу */
+    font-weight: bold; /* Жирный шрифт для меток */
+    color: black;
+    font-size: 20;
 }
 
 #reservation input,
 #reservation select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    width: 100%; /* Поля ввода растягиваются на всю ширину формы */
+    padding: 8px; /* Внутренние отступы */
+    margin-bottom: 30px; /* Отступ снизу поля */
+    border-radius: 5px; /* Закругление углов */
+    border: 1px solid #ccc; /* Цвет рамки */
 }
 
 #reservation button {
-    background-color: #1C1C1C;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: #6995d0; /* Цвет фона кнопки */
+    color: white; /* Цвет текста на кнопке */
+    font-size: 20px;
+    padding: 10px 20px; /* Внутренние отступы кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 4px; /* Закругление углов кнопки */
+    cursor: pointer; /* Курсор-указатель */
+    width: 150px; /* Фиксированная ширина */
+    height: 50px; /* Фиксированная высота */
+    margin-left: 140px;
+    
 }
 
 #reservation button:hover {
-    background-color: #383737;
+    background-color: #3d63ab; /* Цвет кнопки при наведении */
 }
 
 
 .LK {
     position: relative;
     height: 100vh;
-    background-color: #1C1C1C;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Фиксирует фон */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-
 }
 
 .LK h1{
     position: absolute;
-    top: 80px; /* Отступ сверху */
-    left: 20px; /* Отступ слева */
+    top: -5px; /* Отступ сверху */
+    left: 30px;  
     z-index: 2; 
     text-align: left; 
     font-size: 40px;
     color: white;
     padding: 10px 20px;
+}
+
+.LK h2{
+    position: absolute;
+    top: 60px; /* Отступ сверху */
+    left: 30px;  
+    z-index: 2; 
+    text-align: left; 
+    font-size: 30px;
+    color: white;
+    padding: 10px 20px;
+}
+
+
+.footer {
+    background-color: #333; /* Темный фон для футера */
+    color: #ffffff; /* Белый текст */
+    text-align: left; /* Выровнять текст слева */
+    padding: 20px; /* Отступы внутри футера */
+    position: relative; /* Позиционирование футера */
+    bottom: 0; /* Привязка к нижней части страницы */
+    width: 100%; /* Ширина футера */
+}
+
+.footer-content {
+    max-width: 1200px; /* Максимальная ширина содержимого */
+    margin: 0 auto; /* Центрирование содержимого */
+}
+
+.contact-info {
+    display: flex; /* Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Расположение элементов с пространством между */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    margin-bottom: 15px; /* Отступ снизу для разделения с остальным контентом */
+}
+
+.left-info {
+    flex: 1; /* Занимает все пространство слева */
+}
+
+.right-info {
+    flex: 1; /* Занимает все пространство справа */
+}
+
+a {
+    color: #ffffff; /* Белый цвет для ссылок */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #cccccc; /* Серый цвет при наведении */
+}
+
+h1 {
+    margin-bottom: 15px; /* Отступ снизу для заголовка */
+    font-size: 24px; /* Размер заголовка */
+}
+
+h2 {
+    margin-top: -45px; /* Убираем верхний отступ у заголовка */
+    font-size: 24px; /* Размер заголовка для адреса */
+}
+
+p {
+    margin: 5px 0; /* Отступы для параграфов */
+    line-height: 1.5; /* Междустрочный интервал */
+}
+
+.footer p:last-of-type {
+    margin-top: 20px; /* Отступ сверху для последнего параграфа */
 }

@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = 'stylesheet' href="css/stylerooms.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="js/script2.js"></script>
     <title>Комнаты</title>
 </head>
 <body>
+    <header class="head" id="head">
+        <!-- Бургер и навигация -->
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" class="nav-item">Главная</a></li>
+                <li><a href="index.html#korpus" class="nav-item">Корпуса</a></li>
+                <li><a href="index.html#rooms" class="nav-item">Номера</a></li>
+                <li><a href="index.html#cost" class="nav-item">Стоимость</a></li>
+                <li><a href="index.html#reservation" class="nav-item">Бронирование</a></li>
+                <li><a href="index.html#LK" class="nav-item">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="js/script2.js"></script>
+
+
     <div class = "standart" id="standart">
         <h1>Стандарт</h1>
         <div class="wrapper">
@@ -65,7 +85,6 @@
     </div>
 
 
-
     <div class = "luxury" id="luxury">
         <h1>Люкс</h1>
         <h2>*Недоступно для студентов</h2>
@@ -80,22 +99,22 @@
     
                 <div class="carousel-images2">
                     <div class="carousel-slide2">
-                        <img src="images/roomstand1.jpg" alt="Room 1">
+                        <img src="images/roomlux1.jpg" alt="Room 1">
                     </div>
                     <div class="carousel-slide2">
-                        <img src="images/roomstand2.jpg" alt="Room 2">
+                        <img src="images/roomlux2.jpg" alt="Room 2">
                     </div>
                     <div class="carousel-slide2">
-                        <img src="images/roomstand3.png" alt="Room 3">
+                        <img src="images/roomlux3.jpg" alt="Room 3">
                     </div>
                     <div class="carousel-slide2">
-                        <img src="images/roomstand4.png" alt="Room 4">
+                        <img src="images/roomlux4.jpg" alt="Room 4">
                     </div>
                     <div class="carousel-slide2">
-                        <img src="images/roomstand5.jpg" alt="Room 5">
+                        <img src="images/roomlux5.jpg" alt="Room 5">
                     </div>
                     <div class="carousel-slide2">
-                        <img src="images/roomstand6.jpg" alt="Room 6">
+                        <img src="images/roomstand3.png" alt="Room 6">
                     </div>
                 </div>
 
@@ -111,17 +130,17 @@
         </div>
         <div class ="info">
             <h3>Люкс</h3>
-            <p>Номера первой категории предоставляют варианты комфортного размещения: одноместные и двухместные
-                однокомнатные номера, а также просторные трехместные двухкомнатные номера.<br>
-                 <br><u>Основной тариф:</u> много рублей/сутки за 1 койко место. <br><br><u>В номере: </u><br>Две кровати, два стола и стула,
-                  ванная и санузел, шкаф, полотенца, настольные лампы, прикроватные тумбочки  </p>
+            <p>Роскошный люкс, где элегантность встречается с комфортом. Этот просторный 
+                номер идеально подходит для тех, кто ценит высокие стандарты и исключительное обслуживание.<br>
+                 <br><u>Основной тариф:</u> много рублей/сутки за 1 койко место. Стоимость дополнительного койко-места
+                  1000 рублей/сутки. <br><br><u>В номере:</u><br>Двуспальная кровать DBL, кресло и диван (дополнительное спальное место), 
+                  журнальный столик, письменный столом и креслом. Полный санузел.</p>
         </div>
         <div class="button">
             <a href="index.html#reservation" class="btn">Перейти к бронированию</a>
         </div>
     </div>
     </div>
-
 
 
     <div class = "suit" id="suit">
@@ -138,22 +157,22 @@
     
                 <div class="carousel-images3">
                     <div class="carousel-slide3">
-                        <img src="images/roomstand1.jpg" alt="Room 1">
+                        <img src="images/roomsuit1.jpg" alt="Room 1">
                     </div>
                     <div class="carousel-slide3">
-                        <img src="images/roomstand2.jpg" alt="Room 2">
+                        <img src="images/roomsuit2.jpg" alt="Room 2">
                     </div>
                     <div class="carousel-slide3">
-                        <img src="images/roomstand3.png" alt="Room 3">
+                        <img src="images/roomsuit3.jpg" alt="Room 3">
                     </div>
                     <div class="carousel-slide3">
-                        <img src="images/roomstand4.png" alt="Room 4">
+                        <img src="images/roomsuit4.jpg" alt="Room 4">
                     </div>
                     <div class="carousel-slide3">
-                        <img src="images/roomstand5.jpg" alt="Room 5">
+                        <img src="images/roomsuit5.jpg" alt="Room 5">
                     </div>
                     <div class="carousel-slide3">
-                        <img src="images/roomstand6.jpg" alt="Room 6">
+                        <img src="images/roomsuit6.jpg" alt="Room 6">
                     </div>
                 </div>
 
@@ -169,10 +188,11 @@
         </div>
         <div class ="info">
             <h3>Сюит</h3>
-            <p>Номера первой категории предоставляют варианты комфортного размещения: одноместные и двухместные
-                однокомнатные номера, а также просторные трехместные двухкомнатные номера.<br>
-                 <br><u>Основной тариф:</u> много рублей/сутки за 1 койко место. <br><br><u>В номере: </u><br>Две кровати, два стола и стула,
-                  ванная и санузел, шкаф, полотенца, настольные лампы, прикроватные тумбочки  </p>
+            <p> Элегантный сюит, оснащенный всем необходимым для комфортного проживания и отдыха. Этот величественный номер площадью 
+                200 - 210 м2 идеально подойдет как для деловых поездок, так и для расслабляющего отпуска.<br>
+                 <br><u>Основной тариф:</u> много рублей/сутки за 1 койко место. <br><br><u>В номере: </u><br>Две двуспальные 
+                 кровати DBL, гардеробные, рабочий кабинет,панорамные окна, выход на шикарную террасу, зоны отдыха и столовая, 
+                 кухня, кофе-машина, две ванные комнаты и гостевой санузел.</p>
         </div>
         <div class="button">
             <a href="index.html#reservation" class="btn">Перейти к бронированию</a>

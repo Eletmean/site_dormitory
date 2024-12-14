@@ -1,17 +1,6 @@
-console.log("JS файл подключен!");
-document.addEventListener('DOMContentLoaded', function() {
-    const leftBtn = document.querySelector('.left-btn');
-    const rightBtn = document.querySelector('.right-btn');
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
 
-    leftBtn.addEventListener('click', scrollLeft);
-    rightBtn.addEventListener('click', scrollRight);
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
 });
-const leftBtn = document.querySelector('.left-btn');
-const rightBtn = document.querySelector('.right-btn');
-
-if (leftBtn && rightBtn) {
-    leftBtn.addEventListener('click', scrollLeft);
-    rightBtn.addEventListener('click', scrollRight);
-} else {
-    console.error('Кнопки не найдены!');
-}

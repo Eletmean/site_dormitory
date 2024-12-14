@@ -3,3 +3,729 @@ body {
     font-family: 'Roboto', sans-serif; /* Применение шрифта */
     background-color: #1C1C1C;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Меню навигации */
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 9;
+}
+
+.nav.active {
+    display: flex; /* Показываем меню, когда оно активно */
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 20px;
+    line-height: 2;
+    
+}
+.nav-item:hover {
+    background-color: #383737; /* Цвет при наведении */
+    transform: scale(1.05);    /* Легкое увеличение при наведении */
+    border-radius: 30px; 
+
+}
+
+/* Стили для анимации бургера при открытии */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.head-content {
+    position: absolute; 
+    top: 120px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    z-index: 2; 
+    text-align: left; /* Выровнять текст по левому краю */
+}
+
+.head-content h1 {
+    font-size: 40px;
+    color: white;
+    padding: 10px 20px;
+    line-height: 1.4;
+    
+}
+
+.navs {
+    position: absolute;
+    bottom: -300px; /* Сдвиг к нижней части контейнера */
+    left: 50%;    /* Центрируем по горизонтали относительно .head-content */
+    transform: translateX(-55%); /* Выравниваем по центру */
+}
+
+.nav-items {
+    color: white;
+    padding: 12px 24px;        
+    text-decoration: none;  
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 30px;  
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.nav-items:hover {
+    background-color: #383737; /* Цвет при наведении */
+    transform: scale(1.05);    /* Легкое увеличение при наведении */
+}
+
+
+
+
+
+/*korpus1 */
+.korpus1 {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+}
+
+.photos {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 400px;
+    width: 600px;
+}
+
+.photos img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.photos2 {
+    position: absolute;  
+    top: 100px;
+    left: 700px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 25px; 
+   
+}
+
+.photos3 {
+    position: absolute;  
+    top: 100px;
+    left: 1050px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.text {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.button {
+    margin-top: 660px;
+    margin-left: 1060px; 
+}
+
+.button .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6995d0; /* Цвет фона */
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Убирает подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 20px;
+}
+
+.button .btn:hover {
+    background-color: #3d63ab; /* Цвет при наведении */
+}
+
+.info {
+    width: 850px;
+    height: 200px;
+    background-color: rgba(116, 116, 116, 0.75); /* Серый цвет фона с прозрачностью */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
+    align-items: flex-start; /* Выровняем элементы по левому краю */
+    position: absolute;
+    top: 70vh; /* Позиция сверху */
+    left: 50px; /* Позиция справа */
+    z-index: 2; /* Поднимаем элемент выше остальных */
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info h2 {
+    font-size: 25px;
+    margin: 0; /* Убираем отступы сверху и снизу у заголовка */
+    margin-bottom: 10px; /* Отступ снизу для расстояния от основного текста */
+    text-align: left; /* Выравниваем заголовок по левому краю */
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание основного текста по ширине */
+    margin: 0; /* Убираем отступы у основного текста */
+}
+
+
+/* Корпус 2 */
+.korpus2 {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+}
+
+.photos1_2 {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 400px;
+    width: 600px;
+}
+
+.photos1_2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.photos2_2 {
+    position: absolute;  
+    top: 100px;
+    left: 700px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos2_2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 25px; 
+   
+}
+
+.photos3_2 {
+    position: absolute;  
+    top: 100px;
+    left: 1050px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos3_2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.text2 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.button2 {
+    margin-top: 660px;
+    margin-left: 1060px; 
+}
+
+.button2 .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6995d0; /* Цвет фона */
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Убирает подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 20px;
+}
+
+.button2 .btn:hover {
+    background-color: #3d63ab; /* Цвет при наведении */
+}
+
+.info2 {
+    width: 850px;
+    height: 200px;
+    background-color: rgba(116, 116, 116, 0.75); /* Серый цвет фона с прозрачностью */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
+    align-items: flex-start; /* Выровняем элементы по левому краю */
+    position: absolute;
+    top: 70vh; /* Позиция сверху */
+    left: 50px; /* Позиция справа */
+    z-index: 2; /* Поднимаем элемент выше остальных */
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info2 h2 {
+    font-size: 25px;
+    margin: 0; /* Убираем отступы сверху и снизу у заголовка */
+    margin-bottom: 10px; /* Отступ снизу для расстояния от основного текста */
+    text-align: left; /* Выравниваем заголовок по левому краю */
+}
+
+.info2 p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание основного текста по ширине */
+    margin: 0; /* Убираем отступы у основного текста */
+}
+
+
+/* Корпус 3 */
+.korpus3 {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+}
+
+.photos1_3 {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 400px;
+    width: 600px;
+}
+
+.photos1_3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.photos2_3 {
+    position: absolute;  
+    top: 100px;
+    left: 700px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos2_3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 25px; 
+   
+}
+
+.photos3_3 {
+    position: absolute;  
+    top: 100px;
+    left: 1050px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos3_3 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.text3 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.button3 {
+    margin-top: 660px;
+    margin-left: 1060px; 
+}
+
+.button3 .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6995d0; /* Цвет фона */
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Убирает подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 20px;
+}
+
+.button3 .btn:hover {
+    background-color: #3d63ab; /* Цвет при наведении */
+}
+
+.info3 {
+    width: 850px;
+    height: 200px;
+    background-color: rgba(116, 116, 116, 0.75); /* Серый цвет фона с прозрачностью */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
+    align-items: flex-start; /* Выровняем элементы по левому краю */
+    position: absolute;
+    top: 70vh; /* Позиция сверху */
+    left: 50px; /* Позиция справа */
+    z-index: 2; /* Поднимаем элемент выше остальных */
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info3 h2 {
+    font-size: 25px;
+    margin: 0; /* Убираем отступы сверху и снизу у заголовка */
+    margin-bottom: 10px; /* Отступ снизу для расстояния от основного текста */
+    text-align: left; /* Выравниваем заголовок по левому краю */
+}
+
+.info3 p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание основного текста по ширине */
+    margin: 0; /* Убираем отступы у основного текста */
+}
+
+
+/* Корпус 4 */
+
+.korpus4 {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+}
+
+.photos1_4 {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 400px;
+    width: 600px;
+}
+
+.photos1_4 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.photos2_4 {
+    position: absolute;  
+    top: 100px;
+    left: 700px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos2_4 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 25px; 
+   
+}
+
+.photos3_4 {
+    position: absolute;  
+    top: 100px;
+    left: 1050px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos3_4 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.text4 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.button4 {
+    margin-top: 660px;
+    margin-left: 1060px; 
+}
+
+.button4 .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6995d0; /* Цвет фона */
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Убирает подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 20px;
+}
+
+.button4 .btn:hover {
+    background-color: #3d63ab; /* Цвет при наведении */
+}
+
+.info4 {
+    width: 850px;
+    height: 200px;
+    background-color: rgba(116, 116, 116, 0.75); /* Серый цвет фона с прозрачностью */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
+    align-items: flex-start; /* Выровняем элементы по левому краю */
+    position: absolute;
+    top: 70vh; /* Позиция сверху */
+    left: 50px; /* Позиция справа */
+    z-index: 2; /* Поднимаем элемент выше остальных */
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info4 h2 {
+    font-size: 25px;
+    margin: 0; /* Убираем отступы сверху и снизу у заголовка */
+    margin-bottom: 10px; /* Отступ снизу для расстояния от основного текста */
+    text-align: left; /* Выравниваем заголовок по левому краю */
+}
+
+.info4 p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание основного текста по ширине */
+    margin: 0; /* Убираем отступы у основного текста */
+}
+
+
+
+/* Корпус 5 */
+
+.korpus5 {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+}
+
+.photos1_5 {
+    position: absolute;  
+    top: 100px;
+    left: 50px;
+    height: 400px;
+    width: 600px;
+}
+
+.photos1_5 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.photos2_5 {
+    position: absolute;  
+    top: 100px;
+    left: 700px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos2_5 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 25px; 
+   
+}
+
+.photos3_5 {
+    position: absolute;  
+    top: 100px;
+    left: 1050px;
+    height: 400px;
+    width: 300px;
+    
+}
+
+.photos3_5 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  
+    border-radius: 25px;
+    
+}
+
+.text5 {
+    position: absolute; /* Или relative, fixed, sticky */
+    top: -5px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    z-index: 5; 
+    text-align: left; 
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.button5 {
+    margin-top: 660px;
+    margin-left: 1060px; 
+}
+
+.button5 .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6995d0; /* Цвет фона */
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Убирает подчеркивание */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 20px;
+}
+
+.button5 .btn:hover {
+    background-color: #3d63ab; /* Цвет при наведении */
+}
+
+.info5 {
+    width: 850px;
+    height: 200px;
+    background-color: rgba(116, 116, 116, 0.75); /* Серый цвет фона с прозрачностью */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы по вертикали */
+    align-items: flex-start; /* Выровняем элементы по левому краю */
+    position: absolute;
+    top: 70vh; /* Позиция сверху */
+    left: 50px; /* Позиция справа */
+    z-index: 2; /* Поднимаем элемент выше остальных */
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+.info5 h2 {
+    font-size: 25px;
+    margin: 0; /* Убираем отступы сверху и снизу у заголовка */
+    margin-bottom: 10px; /* Отступ снизу для расстояния от основного текста */
+    text-align: left; /* Выравниваем заголовок по левому краю */
+}
+
+.info5 p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Выравнивание основного текста по ширине */
+    margin: 0; /* Убираем отступы у основного текста */
+}
