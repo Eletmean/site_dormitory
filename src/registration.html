@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Общаги</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css"> 
+</head>
+<body>
+    <header class="head" id="head">
+        <!-- Бургер и навигация -->
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <nav class="nav">
+            <ul>
+                <li><a href="#head" class="nav-item">Главная</a></li>
+                <li><a href="#korpus" class="nav-item">Корпуса</a></li>
+                <li><a href="#rooms" class="nav-item">Номера</a></li>
+                <li><a href="#cost" class="nav-item">Стоимость</a></li>
+                <li><a href="#registration-form" class="nav-item">Бронирование</a></li>
+                <li><a href="#LK" class="nav-item">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="head-content" id="header">  
+            <h1>Гостиничный комплекс<br>кампуса ДВФУ</h1>
+            <nav class="navs">
+                <ul>
+                    <li><a href="#registration-form" class="nav-items">Забронировать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="js/script.js"></script>
+
+
+<!-- Корпуса -->
+<div class="korpus" id="korpus">
+    <div class="photos">
+        <a href="/korpuss#korpus1"><img src="images/kar1.jpg" alt="Фото 1"></a>
+
+        <div class="text">Гостиница №1 "Парис"</div>
+    </div>
+    <div class="photos2">
+        <a href="/korpuss#korpus2"><img src="images/kar2.jpg" alt="Фото 2"></a>
+        <div class="text2">Гостиница №2 "Патрокл"</div>
+    </div>
+    <div class="photos3">
+        <a href="/korpuss#korpus3"><img src="images/kar3.jpg" alt="Фото 3"></a>
+        <div class="text3">Гостиница №3 "Улисс"</div>
+    </div>
+    <div class="photos4">
+        <a href="/korpuss#korpus4"><img src="images/kar4.jpg" alt="Фото 4"></a>
+        <div class="text4">Гостиница №4 "Ясон"</div>
+    </div>
+    <div class="photos5">
+        <a href="/korpuss#korpus5"><img src="images/kar5.jpg" alt="Фото 5"></a>
+        <div class="text5">Гостиница №4 "Орфей"</div>
+    </div>
+</div>
+
+
+<!-- Комнаты -->
+<div class="rooms" id="rooms">
+    <div class="room-img2">
+        <div class="overlay"></div>
+        <a href="/rooms#suit"> <!-- Ссылка на следующую страницу -->
+            <img src="images/image2.jpg" width="400" height="239" class="bottom-img2">
+        </a>
+        <h2>Сюит</h2>
+    </div>
+
+    <div class="room-img2">
+        <div class="overlay"></div>
+        <a href="/rooms#luxury"> <!-- Ссылка на следующую страницу -->
+            <img src="images/image3.jpg" width="400" height="239" class="bottom-img3">
+        </a>
+        <h2>Люкс</h2>
+    </div>
+
+    <div class="room-img2">
+        <div class="overlay"></div>
+        <a href="/rooms#standart"> <!-- Ссылка на следующую страницу -->
+            <img src="images/image4.jpg" width="400" height="239" class="bottom-img3">
+        </a>
+        <h2>Первая категория <br>(Стандарт)</h2>
+    </div>
+</div>
+
+
+<!-- Стоимость -->
+<div class="cost" id="cost">
+    <h1>Цены и тарифы</h1>
+    <h2>Первая категория(Стандарт)</h2>
+    <h3 class="tariff">Cтуденческий тариф | за 1 койко место |  13000 рублей/мес.<br>Стандартный тариф | за 1 койко место | 4000 рублей/день.</h3>
+  
+    <h4>Люкс</h4>
+    <h5>*Недоступно для студентов</h5>
+    <h8>Стандартный тариф | за 1 койко место | 10000 рублей/день.</h8>
+    
+    <h6>Cьюит</h6>
+    <h7>*Недоступно для студентов</h7>
+    <h9>Стандартный тариф | за 1 койко место | 30000 рублей/день.</h9>
+</div>
+
+
+<!-- Бронь -->
+    <div class="registration-form" id="registration-form">
+        <h1>Бронирование</h1>
+        <form action="/register" method="post">
+            <!-- Поле ФИО -->
+            <label for="fullName">ФИО:</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Введите ФИО">
+            
+            <!-- Поле почты -->
+            <label for="email">Корпоративная почта:</label>
+            <input type="email" id="email" name="email" required placeholder="Введите email">
+            
+            <!-- Поле адреса проживания -->
+            <label for="address">Адрес проживания:</label>
+            <input type="text" id="address" name="address" required placeholder="Введите адрес проживания">
+            
+            <!-- Поле для номера учебной группы -->
+            <label for="studyGroup">Номер учебной группы:</label>
+            <input type="text" id="studyGroup" name="studyGroup" required placeholder="Б9123-09.03.03">
+            
+            <!-- Поле для номера и серии паспорта -->
+            <label for="passport">Номер и серия паспорта:</label>
+            <input type="text" id="passport" name="passport" pattern="^\d{4} \d{6}$" required placeholder="1234 567890">
+            
+            <!-- Поле для пароля -->
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required placeholder="Введите пароль">
+            
+            <!-- Поле для подтверждения пароля -->
+            <label for="confirmPassword">Подтверждение пароля:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Подтвердите пароль">
+            
+            <!-- Поле для типа комнаты -->
+            <label for="roomType">Тип комнаты:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="single">Стандарт</option>
+                <option value="double">Люкс</option>
+                <option value="suite">Сюит</option>
+            </select>
+            
+            <!-- Поле для приоритетного корпуса -->
+            <label for="building">Приоритетный корпус:</label>
+            <select id="building" name="building" required>
+                <option value="1">Корпус 1</option>
+                <option value="2">Корпус 2</option>
+                <option value="3">Корпус 3</option>
+                <option value="4">Корпус 4</option>
+                <option value="5">Корпус 5</option>
+            </select>
+            
+            <!-- Кнопка отправки -->
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+
+    <footer class="footer" id="LK">
+        <div class="footer-content">
+            <h1>Контакты</h1>
+            <div class="contact-info">
+                <div class="left-info">
+                    <p><i class="fas fa-phone-alt"></i> Телефон: <a href="tel:+74232234010">+7 (423) 223-40-10</a></p>
+                    <p><i class="fas fa-phone-alt"></i> Телефон: <a href="tel:+74232652424">+7 (423) 265-24-24 (доб. 2830)</a></p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hotel@dvfu.ru">hotel@dvfu.ru</a></p>
+                </div>
+                <div class="right-info">
+                    <h2><i class="fas fa-map-marker-alt"></i> Адрес</h2>
+                    <p>посёлок Русский, посёлок Аякс, 10, корп. В (комната 5)</p>
+                </div>
+            </div>
+            <p>&copy; 2024 Все права защищены</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

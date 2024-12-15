@@ -1,0 +1,57 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1C1C1C; /* Темный фон для страницы */
+    color: white; /* Цвет текста */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Это можно оставить, если вы хотите, чтобы заголовок был по центру */
+}
+
+h1 {
+    font-size: 3em; /* Увеличенный размер заголовка */
+    margin-bottom: 20px;
+    color:  #6995d0; /* Цвет заголовка */
+}
+
+/* Стили для ссылок */
+a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #6995d0; /* Цвет текста ссылки */
+    font-weight: bold; /* Сделаем текст ссылки жирным */
+    font-size: 23px;
+    transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+a:hover {
+    color: #a4c8e1; /* Цвет ссылки при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+a:visited {
+    color: #a4c8e1; /* Цвет посещенной ссылки */
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Уменьшаем размер заголовка на мобильных устройствах */
+    }
+
+    p {
+        font-size: 1.2em; /* Уменьшаем размер текста на мобильных устройствах */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Еще больше уменьшаем размер заголовка на очень маленьких экранах */
+    }
+
+    p {
+        font-size: 1em; /* Уменьшаем текст еще больше */
+        padding: 0 10px; /* Добавляем отступы по бокам для мобильных устройств */
+    }
+}

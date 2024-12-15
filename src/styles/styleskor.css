@@ -1,0 +1,252 @@
+body {
+    margin: 0; /* Убираем отступы по умолчанию */
+    font-family: 'Roboto', sans-serif; /* Применение шрифта */
+    background-color: #1C1C1C; /* Цвет фона страницы */
+}
+
+/* Бургер-меню */
+.burger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Меню навигации */
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 9;
+}
+
+.nav.active {
+    display: flex; /* Показываем меню, когда оно активно */
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 20px;
+    line-height: 2;
+}
+
+.nav-item:hover {
+    background-color: #383737; /* Цвет при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Стили для анимации бургера при открытии */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .head-content h1 {
+        font-size: 30px; /* Уменьшаем размер заголовка на мобильных устройствах */
+    }
+
+    .nav {
+        width: 60%; /* Ширина меню на мобильных устройствах */
+    }
+
+    .nav-item {
+        font-size: 16px; /* Уменьшаем размер текста в навигации */
+    }
+
+    .nav-items {
+        font-size: 24px;
+        margin-left: 100px; /* Уменьшаем размер текстов в навигационных элементах */
+    }
+}
+
+@media (max-width: 480px) {
+    .head-content h1 {
+        font-size: 24px; /* Еще больше уменьшаем размер заголовка на маленьких экранах */
+    }
+
+    .nav {
+        width: 80%; /* Ширина меню на очень маленьких устройствах */
+    }
+
+    .nav-items {
+        font-size: 20px; /* Уменьшаем текст еще больше */
+        margin-left: 150px;
+    }
+}
+
+/* Медиа-запросы для адаптации */
+@media (max-width: 768px) {
+    .head::after {
+        width: 50%; /* Измените ширину для планшетов */
+    }
+}
+
+@media (max-width: 480px) {
+    .head::after {
+        width: 100%; /* Измените ширину для мобильных устройств */
+    }
+}
+
+
+.korpus1 {
+    margin: 10px; /* Отступы сверху и снизу */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Отступы внутри блока */
+    position: relative; /* Для абсолютного позиционирования текста */
+}
+
+.korpus2, .korpus3, .korpus4, .korpus5 {
+    margin: 210px 0; /* Отступы сверху и снизу */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Отступы внутри блока */
+    position: relative; /* Для абсолютного позиционирования текста */
+}
+
+/* Заголовки */
+.korpus1 h1, .korpus2 h1, .korpus3 h1, .korpus4 h1, .korpus5 h1{
+    text-align: left; /* Выравнивание заголовка влево */
+    font-size: 36px; /* Размер шрифта заголовка */
+    margin: 10px; /* Убираем отступы */
+    color: white;
+}
+
+/* Полупрозрачный прямоугольник для текста */
+.text-container {
+    position: relative; /* Позиционирование относительно корпуса */
+    background-color: rgba(116, 116, 116, 0.75);/* Полупрозрачный фон */
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Отступы внутри контейнера */
+    margin-top: 30px; /* Отступ сверху */
+    width: 65%;
+}
+
+/* Информация */
+.info, .info2 {
+    color: white;
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+.info h2 {
+    margin: 0; /* Убираем отступы у заголовка h2 */
+}
+
+/* Фотографии */
+.photos {
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: space-between; /* Распределение фотографий с равными отступами */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.photos img {
+    border-radius: 10px; /* Скругление углов фотографий */
+    max-height: 400px; /* Увеличиваем максимальную высоту изображений */
+    object-fit: cover; /* Обеспечиваем обрезку изображений для сохранения пропорций */
+    margin: 10px; /* Отступ между фотографиями */
+    flex: 1; /* Позволяем изображениями занимать равное пространство */
+}
+
+/* Первое фото шире других двух */
+.photos img:first-child {
+    width: calc(60% - 10px); /* Ширина первого фото */
+}
+
+.photos img:not(:first-child) {
+    width: calc(25% - 10px); /* Ширина остальных фотографий для равного размещения */
+}
+
+/* Кнопки */
+.button {
+    text-align: right; /* Выравнивание кнопки вправо */
+    margin: -100px 0; /* Отступы сверху и снизу */
+    margin-right: 30px;
+    font-size: 25px;
+}
+
+.button .btn {
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    background-color:#6995d0; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Скругление углов кнопки */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.button .btn:hover {
+    background-color: #3d63ab; /* Цвет фона кнопки при наведении */
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .text-container {
+        width: 90%; /* Ширина текстового контейнера на мобильных */
+        margin: 0 auto; /* Центрирование контейнера */
+        text-align: center; /* Центрирование текста */
+    }
+
+    .button {
+        text-align: center; /* Центрирование кнопки */
+        margin: 20px 0; /* Отступы для кнопки */
+        font-size: 16px;
+    }
+
+    .photos img {
+        width: calc(50% - 10px); /* Фотографии занимают 50% ширины на мобильных */
+    }
+
+    /* Скрываем второе и третье фото */
+    .photos img:nth-child(2),
+    .photos img:nth-child(3) {
+        display: none; /* Скрываем второе и третье фото */
+    }
+
+    /* Уменьшаем отступы для korpus2 на мобильных */
+    .korpus2, .korpus3, .korpus4, .korpus5 {
+        margin: 50px 0; /* Уменьшаем отступы сверху и снизу */
+    }
+}
+
+@media (max-width: 480px) {
+    .photos img {
+        width: 100%; /* Фотографии занимают 100% ширины на очень маленьких экранах */
+    }
+}
+

@@ -53,6 +53,3 @@ const rightBtn = document.querySelector('.right-btn');
 
 leftBtn.addEventListener('click', scrollLeft);
 rightBtn.addEventListener('click', scrollRight);
-
-
-

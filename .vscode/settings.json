@@ -1,6 +1,4 @@
 {
-    "email": "elina.abbasova.11@gmail.com",
-    "password": "tea752lol",
     "sqltools.connections": [
         {
             "mysqlOptions": {
@@ -11,11 +9,10 @@
             "server": "127.0.0.1",
             "port": 3306,
             "driver": "MariaDB",
-            "name": "user_database",
-            "database": "user_database",
+            "name": "users",
+            "database": "users_database",
             "username": "root"
         },
-    
         {
             "mysqlOptions": {
                 "authProtocol": "default",
@@ -25,9 +22,9 @@
             "server": "127.0.0.1",
             "port": 3306,
             "driver": "MariaDB",
-            "name": "user_bd",
+            "name": "users",
             "database": "user_database",
-            "username": "root"
+            "username": "123"
         }
     ]
 }
