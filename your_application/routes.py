@@ -1,14 +1,15 @@
 import os
 from your_application.app import serve_static_file, get_html_file
 
-# Определяем объект router
 def router(environ, start_response):
-    path = environ.get('PATH_INFO', '/register')
+    # Получаем запрашиваемый путь
+    path = environ.get('PATH_INFO', '/')
 
     # Обработка статических файлов (CSS, JS, изображения)
     if path.startswith('/styles/') or path.startswith('/js/') or path.startswith('/images/'):
         static_file_path = os.path.join('src', path[1:])  # Убираем начальный слэш и добавляем путь к src
         file_content = serve_static_file(static_file_path)
+
         if file_content is None:
             start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
             return [b'404 Not Found']
@@ -39,6 +40,6 @@ def router(environ, start_response):
             start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
             return [b'404 Not Found']
     
-    # Если ни один маршрут не сработал
+    # Если ни один маршрут не сработал, возвращаем 404
     start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
     return [b'404 Not Found']
