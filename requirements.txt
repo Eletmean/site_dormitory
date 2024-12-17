@@ -5,5 +5,3 @@ passlib[bcrypt]
 jinja2
 gunicorn
 flask
-
-database
