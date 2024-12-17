@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Замените на ваши данные
-DATABASE_URL = "mysql+pymysql://username:password@localhost/dbname"
+DATABASE_URL = "mysql+pymysql://root:123@localhost/dbname"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
