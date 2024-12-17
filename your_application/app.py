@@ -20,7 +20,7 @@ def simple_app(environ, start_response):
         '/propiska': 'propiska.html',
         '/wrongemail': 'wrongemail.html',
         '/rooms': 'rooms.html',
-        '/success': 'success.html',
+         '/success': 'success.html',
     }
 
     # Обработка статических файлов
@@ -29,7 +29,7 @@ def simple_app(environ, start_response):
         file_content = serve_static_file(static_file_path)
         if file_content is None:
             start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
-            return [b'404 Not Found']  # Пустой ответ для 404
+            return []  # Пустой ответ для 404
 
         # Определяем тип контента
         content_type = 'text/css' if path.endswith('.css') else 'application/javascript'
@@ -42,7 +42,7 @@ def simple_app(environ, start_response):
     else:
         # Если запрашиваемая страница не найдена
         start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
-        return [b'404 Not Found']  # Пустой ответ для 404
+        return []  # Пустой ответ для 404
 
     # Чтение содержимого HTML-файла
     try:
@@ -50,14 +50,13 @@ def simple_app(environ, start_response):
             html_content = f.read()
     except FileNotFoundError:
         start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
-        return [b'404 Not Found']  # Пустой ответ для 404
+        return []  # Пустой ответ для 404
 
     # Возвращаем HTML-контент
     start_response('200 OK', [('Content-type', 'text/html; charset=utf-8')])
     return [html_content.encode('utf-8')]
 
 # Запуск WSGI сервера
-if __name__ == "__main__":
-    httpd = make_server('', 8000, simple_app)
-    print("Serving on port 8000...")
-    httpd.serve_forever()
+httpd = make_server('', 8000, simple_app)
+print("Serving on port 8000...")
+httpd.serve_forever()
