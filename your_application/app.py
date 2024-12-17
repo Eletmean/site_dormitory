@@ -9,7 +9,7 @@ def serve_static_file(file_path):
 
 def get_html_file(path):
     """Возвращает имя HTML-файла на основе пути."""
-    if path == '/':
+    if path == '/register':
         return 'registration.html'  # Например, главная страница
     elif path == '/korpus':
         return 'korpus.html'
