@@ -1,12 +1,22 @@
-import pymysql  # Если вы используете pymysql
-import mariadb  # Если вы используете mariadb
+# your_application/database.py
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-def get_connection():
-    # Параметры подключения
-    connection = mariadb.connect(
-        host='localhost',  # или IP-адрес вашего сервера
-        user='your_username',
-        password='your_password',
-        database='your_database'
-    )
-    return connection
+# Замените на ваши данные
+DATABASE_URL = "mysql+pymysql://username:password@localhost/dbname"
+
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+def init_db():
+    Base.metadata.create_all(bind=engine)
+
+# Функция для получения сессии
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
