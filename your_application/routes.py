@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Request, Form, HTTPException
+from fastapi import FastAPI, APIRouter, Request, Form, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from passlib.context import CryptContext
 from .database import get_connection  # Импортируйте вашу функцию подключения
 
+app = FastAPI()  # Создаем экземпляр FastAPI
 router = APIRouter()
 templates = Jinja2Templates(directory="src")
 
@@ -73,7 +74,7 @@ async def propiska_page(request: Request):
 async def wrong_email_page(request: Request):
     return templates.TemplateResponse("wrongemail.html", {"request": request})
 
-@router.exception_handler(HTTPException)
+@app.exception_handler(HTTPException)  # Перемещаем обработчик исключений к FastAPI
 async def http_exception_handler(request: Request, exc: HTTPException):
     if exc.status_code == 400:
         if "Пользователь с таким email уже существует" in exc.detail:
@@ -90,7 +91,10 @@ async def get_korpuss_page(request: Request):
 async def get_rooms_page(request: Request):
     return templates.TemplateResponse("rooms.html", {"request": request})
 
+# Включение маршрутов в приложение
+app.include_router(router)
+
 # Опционально: маршрут для проверки доступных маршрутов
-@router.get("/routes")
+@app.get("/routes")
 async def get_routes():
-    return {"routes": [route.path for route in router.routes]}
+    return {"routes": [route.path for route in app.routes]}
