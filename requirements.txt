@@ -9,3 +9,4 @@ Flask==2.0.1
 pymysql==1.0.2
 Werkzeug==2.0.0
 mariadb
+python-multipart
