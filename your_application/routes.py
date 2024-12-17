@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, Form, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from passlib.context import CryptContext
-from database import get_connection  # Импортируйте вашу функцию подключения
+from .database import get_connection  # Импортируйте вашу функцию подключения
 
 router = APIRouter()
 templates = Jinja2Templates(directory="src")
