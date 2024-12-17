@@ -5,3 +5,5 @@ passlib[bcrypt]
 jinja2
 gunicorn
 flask
+Flask==2.0.1
+pymysql==1.0.2
