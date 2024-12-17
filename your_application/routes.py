@@ -3,7 +3,7 @@ from your_application.app import serve_static_file, get_html_file
 
 # Определяем объект router
 def router(environ, start_response):
-    path = environ.get('PATH_INFO', '/')
+    path = environ.get('PATH_INFO', '/register')
 
     # Обработка статических файлов (CSS, JS, изображения)
     if path.startswith('/styles/') or path.startswith('/js/') or path.startswith('/images/'):
