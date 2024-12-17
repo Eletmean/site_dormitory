@@ -2,7 +2,8 @@
 import os
 from your_application.app import serve_static_file, get_html_file
 
-def simple_app(environ, start_response):
+# Определяем объект router
+def router(environ, start_response):
     path = environ.get('PATH_INFO', '/')
 
     # Обработка статических файлов (CSS, JS, изображения)
