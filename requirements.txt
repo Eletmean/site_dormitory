@@ -3,3 +3,4 @@ uvicorn
 sqlalchemy
 passlib[bcrypt] 
 jinja2
+gunicorn
