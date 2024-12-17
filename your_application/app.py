@@ -1,7 +1,12 @@
+import os
 from fastapi import FastAPI
-from your_application.routes import router  # Импортируйте маршруты
+
+port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
 
 app = FastAPI()
 
-# Регистрация маршрутов
-app.include_router(router)
+# Add your routes and other configurations here
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=port)
