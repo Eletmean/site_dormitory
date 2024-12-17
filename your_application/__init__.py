@@ -1,13 +1,7 @@
-from flask import Flask
+from fastapi import FastAPI
+from .routes import router
 
 def create_app():
-    app = Flask(__name__)
-    
-    # Настройка конфигурации приложения (например, секретный ключ)
-    app.config['SECRET_KEY'] = '123'
-
-    # Импорт маршрутов
-    from .routes import main
-    app.register_blueprint(main)
-
+    app = FastAPI()
+    app.include_router(router)
     return app
