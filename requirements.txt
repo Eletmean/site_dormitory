@@ -6,5 +6,4 @@ jinja2
 gunicorn
 flask
 pymysql
-mariadb==1.1.11
 database
