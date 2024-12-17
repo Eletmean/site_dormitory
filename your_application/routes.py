@@ -1,24 +1,14 @@
-from fastapi import APIRouter, Request, Form, Depends, HTTPException
+from fastapi import APIRouter, Request, Form, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
-from sqlalchemy.orm import Session
-from dist.database import SessionLocal  # Импортируйте вашу сессию базы данных
-from dist.models import User  # Импортируйте вашу модель пользователя
-from passlib.context import CryptContext  # Импортируйте CryptContext
+from passlib.context import CryptContext
+from dist.database import get_connection  # Импортируйте вашу функцию подключения
 
 router = APIRouter()
 templates = Jinja2Templates(directory="src")
 
 # Инициализация хеширования паролей
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-# Зависимость для получения сессии базы данных
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.get("/", response_class=HTMLResponse)
 async def root(request: Request):
@@ -39,39 +29,34 @@ async def register(
     roomType: str = Form(...),
     building: str = Form(...),
     password: str = Form(...),  # Добавлено поле для пароля
-    db: Session = Depends(get_db)
 ):
-    # Проверка на существование email
-    existing_email = db.query(User).filter(User.email == email).first()
-    if existing_email:
-        raise HTTPException(status_code=400, detail="Пользователь с таким email уже существует")
-
-    # Проверка на наличие слова "Владивосток" в адресе
-    if "Владивосток" in address:
-        raise HTTPException(status_code=400, detail="Прописка в черте города недопустима")
-
-    # Хеширование пароля
-    hashed_password = pwd_context.hash(password)
-
-    # Создание нового пользователя
-    new_user = User(
-        full_name=fullName,
-        email=email,
-        address=address,
-        study_group=studyGroup,
-        passport=passport,
-        room_type=roomType,
-        building=building,
-        password=hashed_password  # Сохранение хешированного пароля
-    )
-    
-    db.add(new_user)
+    connection = get_connection()
     try:
-        db.commit()
-        db.refresh(new_user)
+        with connection.cursor() as cursor:
+            # Проверка на существование email
+            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+            existing_email = cursor.fetchone()
+            if existing_email:
+                raise HTTPException(status_code=400, detail="Пользователь с таким email уже существует")
+
+            # Проверка на наличие слова "Владивосток" в адресе
+            if "Владивосток" in address:
+                raise HTTPException(status_code=400, detail="Прописка в черте города недопустима")
+
+            # Хеширование пароля
+            hashed_password = pwd_context.hash(password)
+
+            # Создание нового пользователя
+            cursor.execute(
+                "INSERT INTO users (full_name, email, address, study_group, passport, room_type, building, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                (fullName, email, address, studyGroup, passport, roomType, building, hashed_password)
+            )
+            connection.commit()
     except Exception as e:
-        db.rollback()  # Откат транзакции в случае ошибки
+        connection.rollback()  # Откат транзакции в случае ошибки
         raise HTTPException(status_code=500, detail="Ошибка при сохранении пользователя")
+    finally:
+        connection.close()
 
     # Перенаправление на страницу успешной регистрации
     return RedirectResponse(url="/success", status_code=303)
