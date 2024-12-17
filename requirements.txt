@@ -5,5 +5,5 @@ passlib[bcrypt]
 jinja2
 gunicorn
 flask
-pymysql
+PyMySQL>=1.1.1
 database
