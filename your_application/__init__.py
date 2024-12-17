@@ -1,6 +1,13 @@
 from flask import Flask
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    
+    # Настройка конфигурации приложения (например, секретный ключ)
+    app.config['SECRET_KEY'] = 'your_secret_key'
 
-# Импортируем маршруты после создания экземпляра приложения
-from your_application.routes import *  # Импортируем маршруты
+    # Импорт маршрутов
+    from .routes import main
+    app.register_blueprint(main)
+
+    return app

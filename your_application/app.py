@@ -1,9 +1,7 @@
-from your_application import app
+from fastapi import FastAPI
+from your_application.routes import router  # Импортируйте маршруты
 
-# Дополнительные функции или классы могут быть определены здесь
-def additional_function():
-    return "Дополнительная логика"
+app = FastAPI()
 
-@app.route('/additional')
-def additional_route():
-    return additional_function()  # Возвращаем результат функции
+# Регистрация маршрутов
+app.include_router(router)

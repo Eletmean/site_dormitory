@@ -1,4 +1,3 @@
-from your_application import app as application
+from your_application import create_app
 
-if __name__ == "__main__":
-    application.run()  # Запускаем приложение для разработки
+app = create_app()
