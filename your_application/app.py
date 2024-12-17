@@ -5,7 +5,9 @@ port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
 
 app = FastAPI()
 
-# Add your routes and other configurations here
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 if __name__ == "__main__":
     import uvicorn
