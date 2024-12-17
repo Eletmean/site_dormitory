@@ -1,4 +1,3 @@
-# your_application/routes.py
 import os
 from your_application.app import serve_static_file, get_html_file
 
@@ -40,5 +39,6 @@ def router(environ, start_response):
             start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
             return [b'404 Not Found']
     
+    # Если ни один маршрут не сработал
     start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
     return [b'404 Not Found']

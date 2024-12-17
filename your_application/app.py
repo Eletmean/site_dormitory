@@ -1,22 +1,25 @@
-# your_application/app.py
 import os
 
-def serve_static_file(path):
-    """Чтение статических файлов (CSS, JS, изображения)"""
-    try:
-        with open(path, 'rb') as f:
+def serve_static_file(file_path):
+    """Возвращает содержимое статического файла, если он существует."""
+    if os.path.isfile(file_path):
+        with open(file_path, 'rb') as f:
             return f.read()
-    except FileNotFoundError:
-        return None  # Вернем None, если файл не найден
+    return None
 
 def get_html_file(path):
-    """Получение HTML-контента по маршруту"""
-    html_files = {
-        '/register': 'registration.html',
-        '/korpus': 'korpus.html',
-        '/propiska': 'propiska.html',
-        '/wrongemail': 'wrongemail.html',
-        '/rooms': 'rooms.html',
-        '/success': 'success.html',
-    }
-    return html_files.get(path)
+    """Возвращает имя HTML-файла на основе пути."""
+    if path == '/':
+        return 'registration.html'  # Например, главная страница
+    elif path == '/korpus':
+        return 'korpus.html'
+    elif path == '/propiska':
+        return 'propiska.html'
+    elif path == '/wrongemail':
+        return 'wrongemail.html'
+    elif path == '/rooms':
+        return 'rooms.html'
+    elif path == '/success':
+        return 'success.html'
+    else:
+        return None  # Если файл не найден
