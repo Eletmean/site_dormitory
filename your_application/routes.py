@@ -1,100 +1,43 @@
-from fastapi import FastAPI, APIRouter, Request, Form, HTTPException
-from fastapi.responses import RedirectResponse, HTMLResponse
-from fastapi.templating import Jinja2Templates
-from passlib.context import CryptContext
-from .database import get_connection  # Импортируйте вашу функцию подключения
+# your_application/routes.py
+import os
+from your_application.app import serve_static_file, get_html_file
 
-app = FastAPI()  # Создаем экземпляр FastAPI
-router = APIRouter()
-templates = Jinja2Templates(directory="src")
+def simple_app(environ, start_response):
+    path = environ.get('PATH_INFO', '/')
 
-# Инициализация хеширования паролей
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    # Обработка статических файлов (CSS, JS, изображения)
+    if path.startswith('/styles/') or path.startswith('/js/') or path.startswith('/images/'):
+        static_file_path = os.path.join('src', path[1:])  # Убираем начальный слэш и добавляем путь к src
+        file_content = serve_static_file(static_file_path)
+        if file_content is None:
+            start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
+            return [b'404 Not Found']
 
-@router.get("/", response_class=HTMLResponse)
-async def root(request: Request):
-    return RedirectResponse(url="/register")
+        # Определение типа контента
+        if path.startswith('/styles/'):
+            content_type = 'text/css'
+        elif path.startswith('/js/'):
+            content_type = 'application/javascript'
+        elif path.startswith('/images/'):
+            content_type = 'image/jpeg' if path.endswith('.jpg') else 'image/png' if path.endswith('.png') else 'image/gif'
+        else:
+            content_type = 'application/octet-stream'
 
-@router.get("/register", response_class=HTMLResponse)
-async def get_registration_page(request: Request):
-    return templates.TemplateResponse("registration.html", {"request": request})
+        start_response('200 OK', [('Content-type', content_type)])
+        return [file_content]
 
-@router.post("/register")
-async def register(
-    request: Request,
-    fullName: str = Form(...),
-    email: str = Form(...),
-    address: str = Form(...),
-    studyGroup: str = Form(...),
-    passport: str = Form(...),
-    roomType: str = Form(...),
-    building: str = Form(...),
-    password: str = Form(...),  # Добавлено поле для пароля
-):
-    connection = get_connection()
-    try:
-        with connection.cursor() as cursor:
-            # Проверка на существование email
-            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
-            existing_email = cursor.fetchone()
-            if existing_email:
-                raise HTTPException(status_code=400, detail="Пользователь с таким email уже существует")
-
-            # Проверка на наличие слова "Владивосток" в адресе
-            if "Владивосток" in address:
-                raise HTTPException(status_code=400, detail="Прописка в черте города недопустима")
-
-            # Хеширование пароля
-            hashed_password = pwd_context.hash(password)
-
-            # Создание нового пользователя
-            cursor.execute(
-                "INSERT INTO users (full_name, email, address, study_group, passport, room_type, building, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-                (fullName, email, address, studyGroup, passport, roomType, building, hashed_password)
-            )
-            connection.commit()
-    except Exception as e:
-        connection.rollback()  # Откат транзакции в случае ошибки
-        raise HTTPException(status_code=500, detail="Ошибка при сохранении пользователя")
-    finally:
-        connection.close()
-
-    # Перенаправление на страницу успешной регистрации
-    return RedirectResponse(url="/success", status_code=303)
-
-@router.get("/success", response_class=HTMLResponse)
-async def success(request: Request):
-    return templates.TemplateResponse("success.html", {"request": request})
-
-@router.get("/propiska", response_class=HTMLResponse)
-async def propiska_page(request: Request):
-    return templates.TemplateResponse("propiska.html", {"request": request})
-
-@router.get("/wrongemail", response_class=HTMLResponse)
-async def wrong_email_page(request: Request):
-    return templates.TemplateResponse("wrongemail.html", {"request": request})
-
-@app.exception_handler(HTTPException)  # Перемещаем обработчик исключений к FastAPI
-async def http_exception_handler(request: Request, exc: HTTPException):
-    if exc.status_code == 400:
-        if "Пользователь с таким email уже существует" in exc.detail:
-            return await wrong_email_page(request)
-        elif "Прописка в черте города недопустима" in exc.detail:
-            return await propiska_page(request)
-    return HTMLResponse(content=str(exc.detail), status_code=exc.status_code)
-
-@router.get("/korpuss", response_class=HTMLResponse)
-async def get_korpuss_page(request: Request):
-    return templates.TemplateResponse("korpuss.html", {"request": request})
-
-@router.get("/rooms", response_class=HTMLResponse)
-async def get_rooms_page(request: Request):
-    return templates.TemplateResponse("rooms.html", {"request": request})
-
-# Включение маршрутов в приложение
-app.include_router(router)
-
-# Опционально: маршрут для проверки доступных маршрутов
-@app.get("/routes")
-async def get_routes():
-    return {"routes": [route.path for route in app.routes]}
+    # Обработка HTML-файлов
+    html_file = get_html_file(path)
+    if html_file:
+        file_path = os.path.join('src', html_file)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
+            start_response('200 OK', [('Content-type', 'text/html; charset=utf-8')])
+            return [html_content.encode('utf-8')]
+        except FileNotFoundError:
+            start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
+            return [b'404 Not Found']
+    
+    start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
+    return [b'404 Not Found']
