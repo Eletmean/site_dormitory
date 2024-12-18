@@ -27,8 +27,17 @@ def router(environ, start_response):
         start_response('200 OK', [('Content-type', content_type)])
         return [file_content]
 
-    # Обработка HTML-файлов
-    html_file = get_html_file(path)
+    # Обработка HTML-файлов для заданных маршрутов
+    html_files = {
+        '/register': 'registration.html',
+        '/rooms': 'rooms.html',
+        '/success': 'success.html',
+        '/wrongemail': 'wrongemail.html',
+        '/propiska': 'propiska.html'
+    }
+
+    # Получаем имя HTML-файла по маршруту
+    html_file = html_files.get(path)
     if html_file:
         file_path = os.path.join('src', html_file)
         try:
@@ -39,7 +48,7 @@ def router(environ, start_response):
         except FileNotFoundError:
             start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
             return [b'404 Not Found']
-    
+
     # Если ни один маршрут не сработал, возвращаем 404
     start_response('404 Not Found', [('Content-type', 'text/html; charset=utf-8')])
     return [b'404 Not Found']
