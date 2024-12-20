@@ -1,7 +1,7 @@
 body {
-    margin: 0; /* Убираем отступы по умолчанию */
-    font-family: 'Roboto', sans-serif; /* Применение шрифта */
-    background-color: #1C1C1C; /* Цвет фона страницы */
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
+    background-color: #1C1C1C; 
 }
 
 /* Бургер-меню */
@@ -113,16 +113,16 @@ body {
     }
 }
 
-/* Медиа-запросы для адаптации */
+
 @media (max-width: 768px) {
     .head::after {
-        width: 50%; /* Измените ширину для планшетов */
+        width: 50%; 
     }
 }
 
 @media (max-width: 480px) {
     .head::after {
-        width: 100%; /* Измените ширину для мобильных устройств */
+        width: 100%; 
     }
 }
 
@@ -140,7 +140,7 @@ body {
 
 .standart h1, .luxury h1, .suit h1 {
     position: absolute;
-    left: 30px; /* Отступ слева */
+    left: 30px; 
     z-index: 2; 
     text-align: left; 
     font-size: 40px;
@@ -150,7 +150,7 @@ body {
 
 .luxury h2, .suit h2 {
     position: absolute;
-    left: 30px; /* Отступ слева */
+    left: 30px; 
     top: 60px;
     z-index: 2; 
     text-align: left; 
@@ -161,9 +161,9 @@ body {
 
 .wrapper {
     max-width: 700px;
-    margin: 0 auto; /* Центрируем контейнер */
+    margin: 0 auto; 
     overflow: hidden;
-    padding-top: 15vh; /* Отступ сверху */
+    padding-top: 15vh; 
     z-index: 2;
 }
 
@@ -171,7 +171,7 @@ body {
     position: relative;
     margin-left: 30px;
     flex: 1; 
-    display: flex; /* Для правильного центрирования */
+    display: flex; 
     justify-content: center; /* Центрируем карусель */
     overflow: hidden;
 }
@@ -188,7 +188,7 @@ body {
 .carousel-slide, .carousel-slide2, .carousel-slide3 {
     min-width: 100%;
     box-sizing: border-box;
-    border-radius: 25px; /* Скругляем углы контейнера */
+    border-radius: 25px; 
     overflow: hidden;
 }
 
@@ -264,8 +264,8 @@ body {
 
 /* Информация о номерах */
 .info {
-    width: 60%; /* Ширина информации для десктопа */
-    height: 400px; /* Высота для квадратного блока, равная высоте карусели */
+    width: 60%;
+    height: 400px; 
     background-color: rgba(116, 116, 116, 0.75);
     padding: 20px;
     margin-top: 125px;
@@ -276,15 +276,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative; /* Изменяем на relative для корректного позиционирования */
-    z-index: 3; /* Поднимаем элемент выше остальных */
+    position: relative; 
+    z-index: 3; 
     box-sizing: border-box;
     border-radius: 25px;
 }
 
 .info h2, .info h3 {
     font-size: 25px;
-    margin: 0; /* Убираем лишние отступы */
+    margin: 0; 
     text-align: left;
 }
 
@@ -297,53 +297,53 @@ body {
 
 /* Кнопка */
 .button {
-    position: absolute; /* Устанавливаем абсолютное позиционирование */
-    right: 180px; /* Устанавливаем отступ слева для смещения */
-    bottom: 150px; /* Устанавливаем отступ снизу для расположения */
-    display: flex; /* Используем flex для центрирования */
-    justify-content: center; /* Центрируем кнопку по горизонтали */
-    flex-direction: column; /* Вертикальное расположение для кнопки */
-    align-items: center; /* Центрируем кнопку по горизонтали */
+    position: absolute; 
+    right: 180px; 
+    bottom: 150px; 
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .button .btn {
-    padding: 15px 30px; /* Увеличиваем внутренние отступы для кнопки */
+    padding: 15px 30px; 
     background-color: #6995d0;
     color: white;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 20px; /* Устанавливаем размер кнопки */
-    transition: background-color 0.3s; /* Плавный переход для фона */
+    font-size: 20px; 
+    transition: background-color 0.3s; 
 }
 
 .button .btn:hover {
-    background-color: #3d63ab; /* Цвет при наведении */
+    background-color: #3d63ab; 
 }
 
-/* Медиа-запросы для адаптивности */
+
 @media (max-width: 768px) {
     .standart, .luxury, .suit {
-        flex-direction: column; /* Изменяем направление на столбец для мобильных */
-        height: auto; /* Высота авто для адаптивности */
-        align-items: center; /* Центрируем элементы по горизонтали */
+        flex-direction: column; 
+        height: auto; 
+        align-items: center; 
     }
 
     .standart h1, .luxury h1, .suit h1 {
-        font-size: 30px; /* Уменьшаем заголовок для мобильных устройств */
-        text-align: center; /* Центрируем текст заголовка */
-        margin: 0; /* Убираем лишние отступы */
+        font-size: 30px; 
+        text-align: center; 
+        margin: 0; 
     }
     .wrapper {
-        padding-top: 5vh; /* Отступ сверху */
+        padding-top: 5vh; 
     }
 
     .info {
-        width: 90%; /* Ширина информации для мобильных */
-        height: auto; /* Высота авто для адаптивности */
-        margin: 10px 0; /* Убираем отступы по бокам и добавляем отступ сверху и снизу */
-        padding: 10px; /* Уменьшаем внутренние отступы для мобильных */
-        text-align: center; /* Центрируем текст внутри блока информации */
+        width: 90%; 
+        height: auto; 
+        margin: 10px 0; 
+        padding: 10px; 
+        text-align: center; 
     }
 
     .info h2, .info h3 {
@@ -351,17 +351,17 @@ body {
     }
 
     .info p {
-        font-size: 14px; /* Уменьшаем размер текста */
+        font-size: 14px; 
     }
 
     .button {
-        margin-top: 20px; /* Увеличиваем отступ для кнопки на мобильных */
-        position: relative; /* Убираем абсолютное позиционирование для кнопки */
+        margin-top: 20px; 
+        position: relative; 
         bottom: auto; /* Убираем смещение снизу */
-        display: flex; /* Используем flex для центрирования */
-        justify-content: center; /* Центрируем кнопку по горизонтали */
-        align-items: center; /* Центрируем кнопку по вертикали */
-        margin-bottom: 20px; /* Добавляем отступ снизу для кнопки */
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin-bottom: 20px; 
         margin-left: 350px;
     }
 
@@ -370,39 +370,39 @@ body {
     }
 
     .carousel {
-        justify-content: center; /* Центрируем карусель на мобильных */
-        margin-left: 0; /* Убираем левый отступ */
-        margin-top: 10px; /* Уменьшаем отступ сверху карусели */
+        justify-content: center; 
+        margin-left: 0; 
+        margin-top: 10px;
     }
 
     .carousel img {
-        height: 400px; /* Уменьшаем высоту изображений для мобильных */
+        height: 400px; 
     }
 }
 
 @media (max-width: 480px) {
     .standart h1, .luxury h1, .suit h1 {
-        font-size: 24px; /* Еще меньше заголовок для маленьких экранов */
+        font-size: 24px; 
     }
 
     .info {
-        width: 100%; /* Полная ширина для маленьких экранов */
-        height: auto; /* Высота адаптивная для маленьких экранов */
+        width: 100%; 
+        height: auto; 
     }
 
     .info h2, .info h3 {
-        font-size: 18px; /* Уменьшаем заголовок */
+        font-size: 18px; 
     }
 
     .info p {
-        font-size: 12px; /* Уменьшаем текст */
+        font-size: 12px; 
     }
 
     .button .btn {
-        font-size: 18px; /* Уменьшаем размер кнопки */
+        font-size: 18px; 
     }
 
     .carousel img {
-        height: 300px; /* Уменьшаем высоту изображений для маленьких экранов */
+        height: 300px; 
     }
 }

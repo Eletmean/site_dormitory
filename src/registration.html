@@ -113,35 +113,27 @@
     <div class="registration-form" id="registration-form">
         <h1>Бронирование</h1>
         <form action="/register" method="post">
-            <!-- Поле ФИО -->
             <label for="fullName">ФИО:</label>
             <input type="text" id="fullName" name="fullName" required placeholder="Введите ФИО">
             
-            <!-- Поле почты -->
             <label for="email">Корпоративная почта:</label>
             <input type="email" id="email" name="email" required placeholder="Введите email">
             
-            <!-- Поле адреса проживания -->
             <label for="address">Адрес проживания:</label>
             <input type="text" id="address" name="address" required placeholder="Введите адрес проживания">
             
-            <!-- Поле для номера учебной группы -->
             <label for="studyGroup">Номер учебной группы:</label>
             <input type="text" id="studyGroup" name="studyGroup" required placeholder="Б9123-09.03.03">
             
-            <!-- Поле для номера и серии паспорта -->
             <label for="passport">Номер и серия паспорта:</label>
             <input type="text" id="passport" name="passport" pattern="^\d{4} \d{6}$" required placeholder="1234 567890">
             
-            <!-- Поле для пароля -->
             <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required placeholder="Введите пароль">
             
-            <!-- Поле для подтверждения пароля -->
             <label for="confirmPassword">Подтверждение пароля:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Подтвердите пароль">
             
-            <!-- Поле для типа комнаты -->
             <label for="roomType">Тип комнаты:</label>
             <select id="roomType" name="roomType" required>
                 <option value="single">Стандарт</option>
@@ -149,7 +141,6 @@
                 <option value="suite">Сюит</option>
             </select>
             
-            <!-- Поле для приоритетного корпуса -->
             <label for="building">Приоритетный корпус:</label>
             <select id="building" name="building" required>
                 <option value="1">Корпус 1</option>
@@ -159,7 +150,6 @@
                 <option value="5">Корпус 5</option>
             </select>
             
-            <!-- Кнопка отправки -->
             <button type="submit">Отправить</button>
         </form>
     </div>

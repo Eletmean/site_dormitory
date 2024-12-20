@@ -1,7 +1,7 @@
 body {
-    margin: 0; /* Убираем отступы по умолчанию */
-    font-family: 'Roboto', sans-serif; /* Применение шрифта */
-    background-color: #1C1C1C; /* Цвет фона страницы */
+    margin: 0; 
+    font-family: 'Roboto', sans-serif; 
+    background-color: #1C1C1C; 
 }
 
 /* Бургер-меню */
@@ -113,49 +113,49 @@ body {
     }
 }
 
-/* Медиа-запросы для адаптации */
+
 @media (max-width: 768px) {
     .head::after {
-        width: 50%; /* Измените ширину для планшетов */
+        width: 50%; 
     }
 }
 
 @media (max-width: 480px) {
     .head::after {
-        width: 100%; /* Измените ширину для мобильных устройств */
+        width: 100%; 
     }
 }
 
 
 .korpus1 {
-    margin: 10px; /* Отступы сверху и снизу */
-    border-radius: 10px; /* Скругление углов */
-    padding: 20px; /* Отступы внутри блока */
-    position: relative; /* Для абсолютного позиционирования текста */
+    margin: 10px; 
+    border-radius: 10px; 
+    padding: 20px; 
+    position: relative; 
 }
 
 .korpus2, .korpus3, .korpus4, .korpus5 {
-    margin: 210px 0; /* Отступы сверху и снизу */
-    border-radius: 10px; /* Скругление углов */
-    padding: 20px; /* Отступы внутри блока */
-    position: relative; /* Для абсолютного позиционирования текста */
+    margin: 210px 0; 
+    border-radius: 10px; 
+    padding: 20px; 
+    position: relative; 
 }
 
 /* Заголовки */
 .korpus1 h1, .korpus2 h1, .korpus3 h1, .korpus4 h1, .korpus5 h1{
-    text-align: left; /* Выравнивание заголовка влево */
-    font-size: 36px; /* Размер шрифта заголовка */
-    margin: 10px; /* Убираем отступы */
+    text-align: left; 
+    font-size: 36px; 
+    margin: 10px; 
     color: white;
 }
 
 /* Полупрозрачный прямоугольник для текста */
 .text-container {
-    position: relative; /* Позиционирование относительно корпуса */
-    background-color: rgba(116, 116, 116, 0.75);/* Полупрозрачный фон */
-    border-radius: 10px; /* Скругление углов */
-    padding: 20px; /* Отступы внутри контейнера */
-    margin-top: 30px; /* Отступ сверху */
+    position: relative; 
+    background-color: rgba(116, 116, 116, 0.75);
+    border-radius: 10px; 
+    padding: 20px; 
+    margin-top: 30px; 
     width: 65%;
 }
 
@@ -166,22 +166,22 @@ body {
 }
 
 .info h2 {
-    margin: 0; /* Убираем отступы у заголовка h2 */
+    margin: 0; 
 }
 
 /* Фотографии */
 .photos {
-    display: flex; /* Используем flexbox для выравнивания */
+    display: flex; 
     justify-content: space-between; /* Распределение фотографий с равными отступами */
-    margin: 10px 0; /* Отступы сверху и снизу */
+    margin: 10px 0; 
 }
 
 .photos img {
-    border-radius: 10px; /* Скругление углов фотографий */
-    max-height: 400px; /* Увеличиваем максимальную высоту изображений */
-    object-fit: cover; /* Обеспечиваем обрезку изображений для сохранения пропорций */
-    margin: 10px; /* Отступ между фотографиями */
-    flex: 1; /* Позволяем изображениями занимать равное пространство */
+    border-radius: 10px; 
+    max-height: 400px; 
+    object-fit: cover; 
+    margin: 10px; 
+    flex: 1; 
 }
 
 /* Первое фото шире других двух */
@@ -195,47 +195,47 @@ body {
 
 /* Кнопки */
 .button {
-    text-align: right; /* Выравнивание кнопки вправо */
-    margin: -100px 0; /* Отступы сверху и снизу */
+    text-align: right; 
+    margin: -100px 0; 
     margin-right: 30px;
     font-size: 25px;
 }
 
 .button .btn {
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    background-color:#6995d0; /* Цвет фона кнопки */
-    color: white; /* Цвет текста кнопки */
-    text-decoration: none; /* Убираем подчеркивание */
-    border-radius: 5px; /* Скругление углов кнопки */
-    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    padding: 10px 20px; 
+    background-color:#6995d0; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
 }
 
 .button .btn:hover {
-    background-color: #3d63ab; /* Цвет фона кнопки при наведении */
+    background-color: #3d63ab; 
 }
 
-/* Адаптивные стили */
+
 @media (max-width: 768px) {
     .text-container {
-        width: 90%; /* Ширина текстового контейнера на мобильных */
-        margin: 0 auto; /* Центрирование контейнера */
-        text-align: center; /* Центрирование текста */
+        width: 90%; 
+        margin: 0 auto; 
+        text-align: center;
     }
 
     .button {
-        text-align: center; /* Центрирование кнопки */
-        margin: 20px 0; /* Отступы для кнопки */
+        text-align: center; 
+        margin: 20px 0; 
         font-size: 16px;
     }
 
     .photos img {
-        width: calc(50% - 10px); /* Фотографии занимают 50% ширины на мобильных */
+        width: calc(50% - 10px); 
     }
 
     /* Скрываем второе и третье фото */
     .photos img:nth-child(2),
     .photos img:nth-child(3) {
-        display: none; /* Скрываем второе и третье фото */
+        display: none; 
     }
 
     /* Уменьшаем отступы для korpus2 на мобильных */
@@ -246,7 +246,7 @@ body {
 
 @media (max-width: 480px) {
     .photos img {
-        width: 100%; /* Фотографии занимают 100% ширины на очень маленьких экранах */
+        width: 100%; 
     }
 }
 

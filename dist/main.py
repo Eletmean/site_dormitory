@@ -3,9 +3,9 @@ from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
-from dist.database import SessionLocal  # Импортируйте вашу сессию базы данных
-from dist.models import User  # Импортируйте вашу модель пользователя
-from passlib.context import CryptContext  # Импортируйте CryptContext
+from dist.database import SessionLocal  # Импорт сессии базы данных
+from dist.models import User
+from passlib.context import CryptContext
 
 app = FastAPI()
 templates = Jinja2Templates(directory="src")
@@ -44,7 +44,7 @@ async def register(
     passport: str = Form(...),
     roomType: str = Form(...),
     building: str = Form(...),
-    password: str = Form(...),  # Добавлено поле для пароля
+    password: str = Form(...),
     db: Session = Depends(get_db)
 ):
     # Проверка на существование email
@@ -111,7 +111,7 @@ async def get_korpuss_page(request: Request):
 async def get_rooms_page(request: Request):
     return templates.TemplateResponse("rooms.html", {"request": request})
 
-# Опционально: маршрут для проверки доступных маршрутов
+# маршрут для проверки доступных маршрутов
 @app.get("/routes")
 async def get_routes():
     return {"routes": [route.path for route in app.routes]}

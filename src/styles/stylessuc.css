@@ -2,56 +2,56 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #1C1C1C; /* Темный фон для страницы */
-    color: white; /* Цвет текста */
+    background-color: #1C1C1C; 
+    color: white; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Это можно оставить, если вы хотите, чтобы заголовок был по центру */
+    text-align: center; 
 }
 
 h1 {
-    font-size: 3em; /* Увеличенный размер заголовка */
+    font-size: 3em; 
     margin-bottom: 20px;
-    color:  #6995d0; /* Цвет заголовка */
+    color:  #6995d0; 
 }
 
 p {
-    font-size: 1.5em; /* Увеличенный размер шрифта для основного текста */
-    line-height: 1.6; /* Высота строки для удобочитаемости */
-    max-width: 800px; /* Максимальная ширина текста */
-    margin: 0 auto; /* Центрирование текста */
-    text-align: justify; /* Выровнять текст по ширине */
+    font-size: 1.5em; 
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: justify; 
 }
 
 a {
-    color: #007BFF; /* Цвет ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
+    color: #007BFF; 
+    text-decoration: none; 
 }
 
 a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline; 
 }
 
-/* Медиазапросы для адаптивности */
+
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5em; /* Уменьшаем размер заголовка на мобильных устройствах */
+        font-size: 2.5em; 
     }
 
     p {
-        font-size: 1.2em; /* Уменьшаем размер текста на мобильных устройствах */
+        font-size: 1.2em; 
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2em; /* Еще больше уменьшаем размер заголовка на очень маленьких экранах */
+        font-size: 2em; 
     }
 
     p {
-        font-size: 1em; /* Уменьшаем текст еще больше */
-        padding: 0 10px; /* Добавляем отступы по бокам для мобильных устройств */
+        font-size: 1em; 
+        padding: 0 10px; 
     }
 }
 

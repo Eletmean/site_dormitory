@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Это можно оставить, если вы хотите, чтобы заголовок был по центру */
+    text-align: center; 
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
 
 a {
     color: #007BFF; /* Цвет ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
+    text-decoration: none; 
 }
 
 a:hover {

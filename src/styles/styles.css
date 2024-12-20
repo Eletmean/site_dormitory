@@ -1,14 +1,14 @@
 body {
-    margin: 0; /* Убираем отступы по умолчанию */
+    margin: 0; 
     font-family: 'Roboto', sans-serif; /* Применение шрифта */
-    background-color: #1C1C1C; /* Цвет фона страницы */
+    background-color: #1C1C1C; 
 }
 
 /* Стиль шапки */
 .head {
     position: relative;
     height: 100vh; /* Задает высоту в 100% высоты видимой области */
-    background-image: url('../images/background.jpg'); /* Указываем путь к изображению */
+    background-image: url('../images/background.jpg'); /* путь к изображению */
     background-repeat: no-repeat;
     background-size: cover; /* Заполняем весь контейнер изображением */
     background-position: center; /* Центрируем изображение */
@@ -95,14 +95,14 @@ body {
 }
 
 .head-content {
-    position: relative; /* Изменяем на relative для правильного позиционирования */
+    position: relative; 
     z-index: 2;
 }
 
 .head-content h1 {
     font-size: 40px;
     color: white;
-    padding: 10px 0; /* Отступы только сверху и снизу */
+    padding: 10px 0; 
     line-height: 1.4;
     margin-top: 20px; /* Добавьте отступ сверху */
     text-align: left; /* Выровнять текст заголовка по левому краю */
@@ -128,8 +128,8 @@ body {
 }
 
 .nav-items:hover {
-    background-color: #3d63ab; /* Цвет при наведении */
-    transform: scale(1.05); /* Легкое увеличение при наведении */
+    background-color: #3d63ab; 
+    transform: scale(1.05); 
 }
 
 .head::before {
@@ -159,7 +159,7 @@ body {
     display: none; /* Скрывает прямоугольник */
 }
 
-/* Адаптивные стили */
+
 @media (max-width: 768px) {
     .head-content h1 {
         font-size: 30px; /* Уменьшаем размер заголовка на мобильных устройствах */
@@ -194,16 +194,16 @@ body {
     }
 }
 
-/* Медиа-запросы для адаптации */
+
 @media (max-width: 768px) {
     .head::after {
-        width: 50%; /* Измените ширину для планшетов */
+        width: 50%; 
     }
 }
 
 @media (max-width: 480px) {
     .head::after {
-        width: 100%; /* Измените ширину для мобильных устройств */
+        width: 100%;
     }
 }
 
@@ -211,7 +211,7 @@ body {
 .korpus {
     display: flex;
     flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-    justify-content: center; /* Центрирует содержимое по горизонтали */
+    justify-content: center; 
     align-items: flex-start; /* Выравнивание по верхнему краю */
     padding: 20px; /* Отступы вокруг контейнера */
     padding-top: 100px;
@@ -219,19 +219,19 @@ body {
 }
 
 .photos, .photos2, .photos3, .photos4, .photos5 {
-    height: 250px; /* Высота фотографий */
-    width: 400px; /* Ширина фотографий */
+    height: 250px;
+    width: 400px; 
     margin: 20px; /* Отступы между фотографиями */
     margin-bottom: 80px; /* Добавляем отступ между рядами */
-    position: relative; /* Убираем абсолютное позиционирование */
-    display: flex; /* Используем flex для выравнивания содержимого */
-    flex-direction: column; /* Устанавливаем вертикальное направление для текста под фото */
-    align-items: center; /* Центрируем содержимое */
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .photos img, .photos2 img, .photos3 img, .photos4 img, .photos5 img {
-    height: 100%; /* Высота изображения */
-    width: 100%; /* Ширина изображения */
+    height: 100%; 
+    width: 100%; 
     object-fit: cover; /* Сохранение пропорций изображения */
     border-radius: 25px; /* Скругленные углы */
     transition: opacity 0.3s ease; /* Плавный переход */
@@ -242,23 +242,22 @@ body {
 }
 
 .text, .text2, .text3, .text4, .text5 {
-    text-align: center; /* Центрируем текст */
+    text-align: center; 
     font-size: 20px;
     color: white;
-    padding: 10px 0; /* Отступы сверху и снизу */
-    position: relative; /* Сохраняем относительное позиционирование для текста */
-    z-index: 5; /* Убедитесь, что текст находится выше изображений */
+    padding: 10px 0; 
+    position: relative; 
+    z-index: 5; 
 }
 
-/* Медиа-запросы для адаптивного дизайна */
 @media (max-width: 768px) {
     .korpus {
         flex-direction: column; /* Выстраиваем элементы в один столбик на мобильных устройствах */
-        align-items: center; /* Центрируем фотографии */
+        align-items: center; 
     }
 
     .photos, .photos2, .photos3, .photos4, .photos5 {
-        width: 90%; /* Занимаем 90% ширины контейнера на мобильных устройствах */
+        width: 90%;
     }
 }
 
@@ -273,20 +272,20 @@ body {
 
 .rooms {
     position: relative;
-    height: auto; /* Изменяем высоту на автоматическую для адаптивности */
+    height: auto; 
     display: flex;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: flex-start; 
+    justify-content: center; 
     text-align: center; 
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-    padding-top: 100px; /* Добавляем отступ от верхней границы */
+    flex-wrap: wrap; 
+    padding-top: 100px; 
 }
 
 /* Контейнер для каждого блока с картинкой и текстом */
 .room-img2 {
     position: relative;  
-    width: 100%; /* Занимаем 100% ширины на мобильных устройствах */
-    max-width: 400px; /* Максимальная ширина для больших экранов */
+    width: 100%; 
+    max-width: 400px;
     height: 239px;
     overflow: hidden;
     margin: 10px;
@@ -311,15 +310,15 @@ body {
 }
 
 .room-img2 a {
-    display: block; /* Сделаем ссылку блочной, чтобы весь элемент был кликабельным */
+    display: block; /*чтобы весь элемент был кликабельным */
 }
 
 .room-img2 img {
-    transition: opacity 0.3s ease; /* Плавный переход */
+    transition: opacity 0.3s ease; 
 }
 
 .room-img2 a:hover img {
-    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
+    opacity: 0.5;
 }
 
 .overlay {
@@ -327,8 +326,8 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%; /* Половина высоты изображения */
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+    height: 40%; 
+    background-color: rgba(0, 0, 0, 0.5); 
     pointer-events: none; /* Чтобы наложение не блокировало клики */
     z-index: 0;
 }
@@ -336,45 +335,45 @@ body {
 .bottom-img2,
 .bottom-img3,
 .bottom-img4 {
-    display: block; /* Отображаем как блочный элемент */
-    margin: 20px auto; /* Центрируем с отступами сверху и снизу */
-    max-width: 100%; /* Ограничиваем ширину до 100% родительского контейнера */
+    display: block; 
+    margin: 20px auto; 
+    max-width: 100%; 
     height: auto;
 }
 
-/* Медиа-запросы для адаптивного дизайна */
+
 @media (max-width: 768px) {
     .room-img2 {
-        height: 200px; /* Уменьшаем высоту изображения на мобильных устройствах */
+        height: 200px; 
     }
 
     .room-img2 h2 {
-        font-size: 18px; /* Уменьшаем размер шрифта заголовка на мобильных устройствах */
+        font-size: 18px; 
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .room-img2 {
-        height: 239px; /* Высота изображения для планшетов */
+        height: 239px; 
     }
 
     .room-img2 h2 {
-        font-size: 20px; /* Размер шрифта заголовка для планшетов */
+        font-size: 20px; 
     }
 }
 
 @media (min-width: 1025px) {
     .rooms {
-        flex-direction: row; /* Убедимся, что элементы располагаются в ряд */
-        justify-content: space-around; /* Распределяем элементы по горизонтали с равным отступом */
+        flex-direction: row; /* элементы располагаются в ряд */
+        justify-content: space-around; 
     }
 
     .room-img2 {
-        height: 239px; /* Высота изображения для десктопов */
+        height: 239px; 
     }
 
     .room-img2 h2 {
-        font-size: 22px; /* Размер шрифта заголовка для десктопов */
+        font-size: 22px; 
     }
 }
 
@@ -384,10 +383,10 @@ body {
 /* Стоимость*/
 .cost {
     position: relative;
-    height: auto; /* Позволяет контейнеру подстраиваться под содержимое */
-    color: white; /* Цвет текста */
-    padding: 20px; /* Отступы вокруг содержимого */
-    text-align: left; /* Выравнивание текста по левому краю */
+    height: auto; 
+    color: white; 
+    padding: 20px; 
+    text-align: left; 
     padding-top: 100px; 
 }
 
@@ -400,8 +399,8 @@ body {
 .cost h7, 
 .cost h8, 
 .cost h9 {
-    display: block; /* Обеспечивает блочное поведение для заголовков */
-    margin: 20px 0; /* Отступы сверху и снизу для создания пространства между элементами */
+    display: block; 
+    margin: 20px 0; 
 }
 
 .cost h1 {
@@ -410,34 +409,34 @@ body {
 }
 
 .cost h2 {
-    font-size: 2rem; /* Размер шрифта для заголовка 2 */
-    line-height: 1.4; /* Междустрочный интервал для h2 */
+    font-size: 2rem; 
+    line-height: 1.4; 
 }
 
 .cost h4, 
 .cost h6 {
-    font-size: 2rem; /* Размер шрифта для заголовка 4 и 6 */
-    line-height: 1.4; /* Междустрочный интервал для h4 и h6 */
+    font-size: 2rem; 
+    line-height: 1.4; 
 }
 
 .cost h8 {
-    font-size: 1.5rem; /* Размер шрифта для заголовка 8 */
-    line-height: 2; /* Междустрочный интервал для h8 */
+    font-size: 1.5rem; 
+    line-height: 2; 
 }
 
 .cost h3, 
 .cost h9 {
-    font-size: 1.5rem; /* Размер шрифта для заголовка 3 и 9 */
-    line-height: 2; /* Междустрочный интервал для h3 и h9 */
+    font-size: 1.5rem; 
+    line-height: 2; 
 }
 
 .cost h5, 
 .cost h7 {
-    font-size: 0.7rem; /* Размер шрифта для заголовков 5 и 7 */
-    line-height: 1.2; /* Междустрочный интервал для h5 и h7 */
+    font-size: 0.7rem; 
+    line-height: 1.2; 
 }
 
-/* Медиа-запрос для адаптивного дизайна */
+
 @media (max-width: 768px) {
     .cost h1 {
         font-size: 1.8rem; /* Уменьшаем размер шрифта для h1 на мобильных */
@@ -445,27 +444,27 @@ body {
     }
 
     .cost h2 {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта для h2 на мобильных */
-        line-height: 1.3; /* Междустрочный интервал для h2 на мобильных */
+        font-size: 1.5rem; 
+        line-height: 1.3; 
     }
 
     .cost h3, 
     .cost h4, 
     .cost h6 {
-        font-size: 1.4rem; /* Уменьшаем размер шрифта для h3, h4, h6 на мобильных */
-        line-height: 1.3; /* Междустрочный интервал для h3, h4, h6 на мобильных */
+        font-size: 1.4rem; 
+        line-height: 1.3; 
     }
 
     .cost h5, 
     .cost h7 {
-        font-size: 0.6rem; /* Уменьшаем размер шрифта для h5 и h7 на мобильных */
-        line-height: 1.2; /* Междустрочный интервал для h5 и h7 на мобильных */
+        font-size: 0.6rem; 
+        line-height: 1.2; 
     }
 
     .cost h8, 
     .cost h9 {
-        font-size: 1.2rem; /* Уменьшаем размер шрифта для h8 и h9 на мобильных */
-        line-height: 1.5; /* Междустрочный интервал для h8 и h9 на мобильных */
+        font-size: 1.2rem; 
+        line-height: 1.5; 
     }
 }
 
@@ -476,154 +475,155 @@ body {
 .registration-form {
     background-color: #c4c4c4; /* Цвет фона формы */
     padding: 1rem; /* Отступы внутри формы */
-    border-radius: 1rem; /* Скругленные углы */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень для формы */
-    width: 80%; /* Уменьшенная ширина формы на 80% от родительского элемента */
-    max-width: 400px; /* Максимальная ширина формы 400px */
-    height: auto; /* Автоматическая высота */
-    display: flex; /* Используем flexbox для распределения элементов */
-    flex-direction: column; /* Вертикальное расположение элементов */
-    margin: 20px auto; /* Центрируем форму по горизонтали и добавляем отступ сверху */
-    position: relative; /* Позволяет использовать абсолютное позиционирование внутри */
+    border-radius: 1rem; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; 
+    max-width: 400px; 
+    height: auto; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 20px auto; 
+    position: relative; 
 }
 
 h1 {
-    text-align: center; /* Центрирует заголовок */
+    text-align: center; 
 }
 
 label {
-    display: block; /* Делает метки блочными элементами */
-    margin-top: 0.5rem; /* Уменьшенный отступ сверху для меток */
+    display: block; 
+    margin-top: 0.5rem; 
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 select {
-    width: 100%; /* Ширина полей ввода на 100% от родительского элемента */
-    padding: 0.5rem; /* Уменьшенные отступы внутри полей ввода */
-    margin-top: 0.5rem; /* Отступ сверху для полей ввода */
-    border: 1px solid #ccc; /* Цвет рамки */
-    border-radius: 0.5rem; /* Скругленные углы полей ввода */
-    box-sizing: border-box; /* Учитывает отступы и рамки в ширине */
+    width: 100%; 
+    padding: 0.5rem; 
+    margin-top: 0.5rem; 
+    border: 1px solid #ccc; 
+    border-radius: 0.5rem;
+    box-sizing: border-box; 
 }
 
 button {
-    margin-top: 1rem; /* Уменьшенный отступ сверху для кнопки */
-    padding: 0.5rem; /* Уменьшенные отступы внутри кнопки */
-    width: 40%; /* Ширина кнопки на 100% от родительского элемента */
-    background-color: #6995d0; /* Цвет фона кнопки */
-    color: white; /* Цвет текста кнопки */
-    border: none; /* Убирает рамку */
-    border-radius: 0.5rem; /* Скругленные углы кнопки */
-    cursor: pointer; /* Указывает, что кнопка кликабельна */
-    display: block; /* Делаем кнопку блочным элементом */
-    margin-left: auto; /* Автоматический отступ слева */
-    margin-right: auto; /* Автоматический отступ справа */ 
+    margin-top: 1rem; 
+    padding: 0.5rem; 
+    width: 40%; 
+    background-color: #6995d0; 
+    color: white; 
+    border: none; 
+    border-radius: 0.5rem; 
+    cursor: pointer; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;  
 }
 
 button:hover {
-    background-color: #3d63ab; /* Цвет фона кнопки при наведении */
+    background-color: #3d63ab; 
+    
 }
 
-/* Медиа-запросы для улучшения адаптивности */
+
 @media (max-width: 600px) {
     .registration-form {
-        padding: 1rem; /* Уменьшение отступов на меньших экранах */
+        padding: 1rem; 
     }
 
     h1 {
-        font-size: 1.5rem; /* Уменьшение размера заголовка */
+        font-size: 1.5rem; 
     }
 
     input[type="text"],
     input[type="email"],
     input[type="password"],
     select {
-        padding: 0.4rem; /* Уменьшение отступов внутри полей ввода */
+        padding: 0.4rem; 
     }
 
     button {
-        padding: 0.4rem; /* Уменьшение отступов внутри кнопки */
+        padding: 0.4rem; 
     }
 }
 
 
 /*Футер*/
 .footer {
-    background-color: #333; /* Темный фон для футера */
-    color: #ffffff; /* Белый текст */
-    text-align: left; /* Выровнять текст слева */
-    padding: 20px; /* Отступы внутри футера */
-    position: relative; /* Позиционирование футера */
+    background-color: #333; 
+    color: #ffffff; 
+    text-align: left; 
+    padding: 20px; 
+    position: relative; 
     bottom: 0; /* Привязка к нижней части страницы */
-    width: 100%; /* Ширина футера */
-    box-sizing: border-box; /* Учитываем отступы в ширине */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .footer-content {
-    max-width: 1200px; /* Максимальная ширина содержимого */
-    margin: 0 auto; /* Центрирование содержимого */
-    padding: 0 15px; /* Горизонтальные отступы для адаптивности */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
 }
 
 .contact-info {
-    display: flex; /* Flexbox для выравнивания элементов */
-    justify-content: space-between; /* Расположение элементов с пространством между */
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
     flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-    margin-bottom: 15px; /* Отступ снизу для разделения с остальным контентом */
+    margin-bottom: 15px; 
 }
 
 .left-info,
 .right-info {
-    flex: 1; /* Занимает все пространство слева и справа */
-    min-width: 200px; /* Минимальная ширина для обеспечения читаемости */
-    margin: 10px; /* Отступы между блоками информации */
+    flex: 1; 
+    min-width: 200px; 
+    margin: 10px; 
 }
 
 a {
-    color: #ffffff; /* Белый цвет для ссылок */
+    color: #ffffff; 
     text-decoration: underline;
 }
 
 a:hover {
-    color: #cccccc; /* Серый цвет при наведении */
+    color: #cccccc; 
 }
 
 h1,
 h2 {
     text-align: left;
-    margin: 0 0 15px; /* Убираем верхний отступ у заголовка и добавляем нижний */
-    font-size: 24px; /* Размер заголовка */
+    margin: 0 0 15px; 
+    font-size: 24px; 
 
 }
 
 p {
-    margin: 5px 0; /* Отступы для параграфов */
-    line-height: 1.5; /* Междустрочный интервал */
+    margin: 5px 0; 
+    line-height: 1.5; 
 }
 
 .footer p:last-of-type {
-    margin-top: 20px; /* Отступ сверху для последнего параграфа */
+    margin-top: 20px; 
 }
 
-/* Медиа-запрос для адаптивного дизайна */
+
 @media (max-width: 768px) {
     .contact-info {
-        flex-direction: column; /* Переключаем на вертикальное расположение на мобильных */
-        align-items: flex-start; /* Выравнивание по левому краю */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 
     .left-info,
     .right-info {
-        min-width: 100%; /* Занимаем всю ширину на мобильных */
-        margin: 5px 0; /* Уменьшаем отступы между блоками */
+        min-width: 100%; 
+        margin: 5px 0; 
     }
 
     h1,
     h2 {
-        font-size: 20px; /* Уменьшаем размер заголовков на мобильных */
+        font-size: 20px; 
     }
 }
 

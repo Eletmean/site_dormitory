@@ -2,12 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #1C1C1C; /* Темный фон для страницы */
-    color: white; /* Цвет текста */
+    background-color: #1C1C1C; 
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Это можно оставить, если вы хотите, чтобы заголовок был по центру */
+    text-align: center;
 }
 
 h1 {
@@ -20,18 +20,18 @@ h1 {
 a {
     text-decoration: none; /* Убираем подчеркивание */
     color: #6995d0; /* Цвет текста ссылки */
-    font-weight: bold; /* Сделаем текст ссылки жирным */
+    font-weight: bold;
     font-size: 23px;
     transition: color 0.3s ease; /* Плавный переход цвета при наведении */
 }
 
 a:hover {
     color: #a4c8e1; /* Цвет ссылки при наведении */
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline; 
 }
 
 a:visited {
-    color: #a4c8e1; /* Цвет посещенной ссылки */
+    color: #a4c8e1; 
 }
 
 /* Медиазапросы для адаптивности */
