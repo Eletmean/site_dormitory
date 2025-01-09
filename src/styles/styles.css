@@ -170,7 +170,7 @@ body {
     }
 
     .nav-item {
-        font-size: 16px; /* Уменьшаем размер текста в навигации */
+        font-size: 23px; /* Уменьшаем размер текста в навигации */
     }
 
     .nav-items {
@@ -181,16 +181,16 @@ body {
 
 @media (max-width: 480px) {
     .head-content h1 {
-        font-size: 24px; /* Еще больше уменьшаем размер заголовка на маленьких экранах */
+        font-size: 30px; 
     }
 
     .nav {
-        width: 80%; /* Ширина меню на очень маленьких устройствах */
+        width: 100%; /* Ширина меню на очень маленьких устройствах */
     }
 
     .nav-items {
-        font-size: 20px; /* Уменьшаем текст еще больше */
-        margin-left: 150px;
+        font-size: 24px; /* Уменьшаем текст еще больше */
+        margin-left: 230px;
     }
 }
 
@@ -207,68 +207,82 @@ body {
     }
 }
 
-/* КОРПУС */
-.korpus {
+
+
+/**КОРПУСА**/
+.krp, .krp2 {
     display: flex;
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    flex-wrap: wrap; 
     justify-content: center; 
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    padding: 20px; /* Отступы вокруг контейнера */
-    padding-top: 100px;
-    height: auto; /* Высота будет автоматически подстраиваться под содержимое */
+    align-items: flex-start; 
+    padding: 20px; 
 }
 
-.photos, .photos2, .photos3, .photos4, .photos5 {
-    height: 250px;
-    width: 400px; 
-    margin: 20px; /* Отступы между фотографиями */
-    margin-bottom: 80px; /* Добавляем отступ между рядами */
-    position: relative; 
-    display: flex; 
-    flex-direction: column; 
+.krp a, .krp2 a { 
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение элементов внутри ссылки */
     align-items: center; 
+    margin: 10px; /* Отступ между элементами */
+    width: 100%; /* Ширина 100% для полных строк */
+    text-align: center; /* Центрируем текст под изображением */
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание текста */
 }
 
-.photos img, .photos2 img, .photos3 img, .photos4 img, .photos5 img {
-    height: 100%; 
-    width: 100%; 
-    object-fit: cover; /* Сохранение пропорций изображения */
-    border-radius: 25px; /* Скругленные углы */
-    transition: opacity 0.3s ease; /* Плавный переход */
+/* Фиксированный размер шрифта для заголовка и текста описания */
+.krp h2, .krp2 h2 {
+    font-size: 20px; /* Размер шрифта заголовка */
+    margin:10px 0 0;/* Отступы сверху, убираем отступы снизу */
 }
 
-.photos a:hover img, .photos2 a:hover img, .photos3 a:hover img, .photos4 a:hover img, .photos5 a:hover img {
-    opacity: 0.5; /* Уменьшаем яркость изображения при наведении */
+
+.krp img, .krp2 img {
+    width: 100%; /* Изображение занимает 100% ширины ссылок */
+    height: auto; /* Авто высота для поддержания пропорций */
+    object-fit: cover; 
+    border-radius: 25px; /* Фиксированное скругление */
+    transition: opacity 0.3s ease; 
 }
 
-.text, .text2, .text3, .text4, .text5 {
-    text-align: center; 
-    font-size: 20px;
-    color: white;
-    padding: 10px 0; 
-    position: relative; 
-    z-index: 5; 
+.krp2 a:hover img, .krp2 a:hover img {
+    opacity: 0.5; 
 }
 
-@media (max-width: 768px) {
-    .korpus {
-        flex-direction: column; /* Выстраиваем элементы в один столбик на мобильных устройствах */
-        align-items: center; 
+/* Стили для экранов шире 1024px */
+@media (min-width: 1024px) {
+    .krp {
+        flex-direction: row; /* Отображение в строчку для первого контейнера */
+    }
+    
+    .krp2 a {
+        max-width: 30%; /* Ограничиваем максимальную ширину для 3-х в строке */
+    }
+    
+    .krp2 {
+        flex-direction: row; /* Отображение в строчку для второго контейнера */
     }
 
-    .photos, .photos2, .photos3, .photos4, .photos5 {
-        width: 90%;
+    .krp a {
+        max-width: 30%; /* Ограничиваем максимальную ширину для 3-х в строке */
     }
 }
 
-@media (min-width: 769px) {
-    .photos, .photos2, .photos3, .photos4, .photos5 {
-        width: calc(33.33% - 40px); /* Три фотографии в ряд на экранах шириной более 768px */
+/* Стили для экранов с меньшей шириной (например, 1024px и менее) */
+@media (max-width: 1023px) {
+    .krp, .krp2 {
+        flex-direction: column; /* Все элементы будут в один столбик */
+        align-items: center; /* Центрируем элементы по горизонтали */
+    }
+
+    .krp a, .krp2 a {
+        width: 80%; /* Уменьшаем ширину элементов до 80% */
+        font-size: 28px; /* Уменьшаем размер шрифта для мобильных */
+    }
+
+    .krp img, .krp2 img {
+        border-radius: 25px; /* Увеличиваем скругление изображений для мобильных */
     }
 }
-
-
-/* Комнаты */
 
 .rooms {
     position: relative;
@@ -345,6 +359,7 @@ body {
 @media (max-width: 768px) {
     .room-img2 {
         height: 200px; 
+        flex-direction: column;
     }
 
     .room-img2 h2 {
@@ -376,7 +391,6 @@ body {
         font-size: 22px; 
     }
 }
-
 
 
 
@@ -471,7 +485,6 @@ body {
 
 
 
-/* Стили для формы регистрации */
 .registration-form {
     background-color: #c4c4c4; /* Цвет фона формы */
     padding: 1rem; /* Отступы внутри формы */
