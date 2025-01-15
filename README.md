@@ -1,1 +1,1 @@
-Ссылка на сайт (по ссылке только статические файлы): https://elina.website.yandexcloud.net/
+Ссылка на сайт: https://elina.website.yandexcloud.net/
